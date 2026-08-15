@@ -1,32 +1,53 @@
-# React + TypeScript + Vite
+# Satyam Kumar Kapri - Professional Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A stunning, fully responsive portfolio website built with React, Vite, and modern CSS featuring glassmorphism design. This portfolio is engineered to highlight competitive programming achievements, real-time GitHub projects, and extensive technical skills.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*   **Dynamic GitHub Projects Feed:** Includes a seamless integration with the GitHub API. Clicking "View All Projects" opens a beautifully styled modal that fetches and displays real-time repositories directly from GitHub.
+*   **ATS-Friendly Resume Generator:** Features a custom-built, classic Harvard-style `resume.html` that allows recruiters to instantly generate and print a perfectly formatted A4 PDF natively through the browser.
+*   **Live Contact Form:** Fully functional contact form powered by Web3Forms, delivering messages straight to the inbox without needing a backend server.
+*   **Modern Aesthetics:** Designed from scratch using pure, modern CSS variables, responsive `clamp()` typography, and elegant glassmorphism effects.
+*   **Competitive Programming Highlights:** Custom "Achievements" section designed to showcase CodeChef 5★ rating, DSA global rankings, and over 640+ solved algorithmic problems.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Frontend:** React 18, TypeScript
+*   **Build Tool:** Vite
+*   **Icons:** Lucide React
+*   **Styling:** Vanilla CSS3 (Custom Variables, Flexbox, Grid)
+*   **API Integration:** GitHub REST API
 
-## Expanding the Oxlint configuration
+## 💻 Getting Started (Local Development)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+To run this project locally on your machine:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/satyamkumarkapri/SatyamKapriPortfolio.git
+    cd SatyamKapriPortfolio
+    ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```
+
+## 📝 Customization Guide
+
+*   **Theme Colors:** You can quickly change the entire color scheme by updating the `--color-primary` CSS variables inside `src/index.css`.
+*   **Resume Updates:** To update the downloadable resume, edit the raw HTML inside `public/resume.html`. It is already optimized for standard A4 printing.
+*   **Contact Form:** Update the hidden `access_key` input in `src/components/CTA.tsx` with your own Web3Forms access key to route emails to your personal inbox.
+
+---
+*Designed & Built by [Satyam Kumar Kapri](https://github.com/satyamkumarkapri)*
