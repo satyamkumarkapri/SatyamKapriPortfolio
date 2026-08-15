@@ -26,9 +26,9 @@ const Footer: React.FC = () => {
             <h4 className="footer-heading">QUICK LINKS</h4>
             <ul>
               <li><a href="#about">About Me</a></li>
-              <li><a href="#services">Services</a></li>
+              <li><a href="#techstack">Tech Stack</a></li>
               <li><a href="#projects">Projects</a></li>
-              <li><a href="#process">Process</a></li>
+              <li><a href="#achievements">Achievements</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
