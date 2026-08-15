@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyam Kumar Kapri - Resume</title>
+    <style>
+        :root {
+            --text-color: #000;
+            --link-color: #000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            color: var(--text-color);
+            background: #fff;
+            font-size: 11pt;
+            line-height: 1.3;
+        }
+
+        .resume-container {
+            max-width: 800px; /* Standard A4 width approx */
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* For printing to PDF */
+        @media print {
+            body {
+                background: none;
+            }
+            .resume-container {
+                padding: 0;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .name {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            font-size: 11pt;
+        }
+
+        .contact-info a {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 13pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            margin-bottom: 6px;
+            padding-bottom: 2px;
+        }
+
+        .item {
+            margin-bottom: 8px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .item-title {
+            font-weight: bold;
+        }
+        
+        .item-subtitle {
+            font-style: italic;
+        }
+
+        .item-date {
+            font-weight: normal;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin-top: 3px;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skills-list li {
+            margin-bottom: 3px;
+        }
+        
+        .print-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background: #7C3AED;
+            color: white;
+            border-radius: 5px;
+            font-family: sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .print-btn:hover {
+            background: #6D28D9;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="window.print(); return false;" class="print-btn no-print">💾 Save as PDF / Print</a>
+
+    <div class="resume-container">
+        
+        <!-- HEADER -->
+        <div class="header">
+            <div class="name">SATYAM KUMAR KAPRI</div>
+            <div class="contact-info">
+                +91 7061171017 | 
+                <a href="mailto:satyamkumarkapri17@gmail.com">satyamkumarkapri17@gmail.com</a> | 
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> | 
+                <a href="https://github.com/satyamkumarkapri" target="_blank">GitHub</a> | 
+                <a href="#" target="_blank">Hugging Face</a>
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">KL Deemed to be University</span>
+                    <span class="item-date">Expected Graduation: 2029</span>
+                </div>
+                <div class="item-header">
+                    <span class="item-subtitle">B.Tech, Computer Science & Engineering (Project Based Learning)</span>
+                    <span class="item-date">CGPA: 9.12 / 10.0</span>
+                </div>
+                <ul>
+                    <li>Relevant coursework: Data Structures & Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks, Software Engineering, Discrete Mathematics.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TECHNICAL SKILLS -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <ul class="skills-list">
+                <li><strong>Languages:</strong> Java, Python, JavaScript, SQL, HTML5, CSS3</li>
+                <li><strong>Frameworks:</strong> Spring Boot, FastAPI, React, Flask</li>
+                <li><strong>Databases:</strong> PostgreSQL, MongoDB, MySQL</li>
+                <li><strong>Tools:</strong> Git/GitHub, Docker, Postman, VS Code, IntelliJ IDEA, Eclipse, Render, Hugging Face Spaces</li>
+            </ul>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section">
+            <div class="section-title">Projects</div>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">COVID-19 Data Analysis Dashboard</span>
+                    <span class="item-subtitle">Python, FastAPI, JavaScript</span>
+                </div>
+                <ul>
+                    <li>Engineered a full-stack analytics dashboard by building REST APIs in FastAPI to serve statistical models and forecasts over real-time COVID-19 datasets.</li>
+                    <li>Implemented data visualization and trend-forecasting features, translating raw case data into actionable insights for end users.</li>
+                    <li>Deployed the application on Hugging Face Spaces, making it publicly accessible with zero-downtime hosting.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">HealthNet – Intelligent Hospital Resource Management</span>
+                    <span class="item-subtitle">Java, OOP, Data Structures</span>
+                </div>
+                <ul>
+                    <li>Designed a hospital resource management system in Java covering patient registration, appointment scheduling, and resource allocation.</li>
+                    <li>Applied HashMap, Queue, and Stack from the Java Collections Framework to optimize lookup and scheduling operations.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">PhonePe Payment System (Simulation)</span>
+                    <span class="item-subtitle">Java</span>
+                </div>
+                <ul>
+                    <li>Built a digital wallet simulation supporting fund transfers and transaction history using object-oriented design principles.</li>
+                    <li>Structured core modules around the Java Collections Framework to model accounts and transaction records efficiently.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Hospital Navigation System</span>
+                    <span class="item-subtitle">Python, HTML, CSS, Render</span>
+                </div>
+                <ul>
+                    <li>Designed and deployed a responsive web application to help patients and visitors navigate hospital facilities; live at hospitalnavigationsystem.onrender.com.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">API Dashboard & Product Catalogue Management System</span>
+                    <span class="item-subtitle">FastAPI, PostgreSQL, Java, SQL</span>
+                </div>
+                <ul>
+                    <li>Designed RESTful APIs backed by PostgreSQL and built an interactive analytics dashboard with full CRUD functionality.</li>
+                    <li>Developed a relational inventory/catalogue management application in Java with complete CRUD database integration.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COMPETITIVE PROGRAMMING -->
+        <div class="section">
+            <div class="section-title">Competitive Programming</div>
+            <ul>
+                <li><strong>3 ★ CodeChef programmer</strong> (Division 2); highest rating 1700 — ranked #312 globally and #280 in India.</li>
+                <li><strong>DSA rating 1700</strong>, ranked #693 globally and #570 in India for algorithmic problem solving.</li>
+                <li>Solved 460+ competitive programming problems; awarded the Problem Solver Gold Badge.</li>
+            </ul>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="section">
+            <div class="section-title">Certifications</div>
+            <ul>
+                <li><strong>CodeChef</strong> — Java Programming; Algorithmic Problem Solving Using Java</li>
+                <li><strong>freeCodeCamp</strong> — Frontend Development Libraries; Legacy Responsive Web Design</li>
+                <li><strong>Simplilearn</strong> — Python Django 101; Introduction to ASP.NET; Mathematics for Data Science</li>
+                <li><strong>Cambridge</strong> — Linguaskill Certification</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -4,28 +4,28 @@ import './Process.css';
 const processes = [
   {
     num: '01',
-    title: 'Discover',
-    desc: 'Understanding your goals, audience and requirements.'
+    title: 'Analyze',
+    desc: 'Understanding data, constraints, and core business objectives.'
   },
   {
     num: '02',
-    title: 'Plan',
-    desc: 'Research, strategy and wireframing the structure.'
+    title: 'Architect',
+    desc: 'Designing scalable system architectures and data models.'
   },
   {
     num: '03',
-    title: 'Design',
-    desc: 'Creating visually engaging and user-friendly designs.'
+    title: 'Develop',
+    desc: 'Writing efficient, robust, and clean software code.'
   },
   {
     num: '04',
-    title: 'Develop',
-    desc: 'Building fast, responsive and optimized websites.'
+    title: 'Optimize',
+    desc: 'Training AI models, testing algorithms, and refining performance.'
   },
   {
     num: '05',
-    title: 'Deliver',
-    desc: 'Testing, launching and ongoing support.'
+    title: 'Deploy',
+    desc: 'Seamless integration, deployment, and ongoing system support.'
   }
 ];
 

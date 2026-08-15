@@ -1,0 +1,108 @@
+import React from 'react';
+import { Trophy, Award, Star, Code2, Medal } from 'lucide-react';
+import './Achievements.css';
+
+const Achievements: React.FC = () => {
+  return (
+    <section id="achievements" className="achievements section-padding">
+      <div className="container">
+        
+        <div className="section-header">
+          <div>
+            <div className="badge">ACHIEVEMENTS</div>
+            <h2 className="section-title">Competitive Programming & Certifications</h2>
+          </div>
+        </div>
+
+        <div className="achievements-container">
+          
+          {/* Competitive Programming Column */}
+          <div className="achievement-column glass">
+            <div className="column-header">
+              <Trophy size={28} className="column-icon" />
+              <h3>Competitive Programming</h3>
+            </div>
+            
+            <div className="achievement-list">
+              <div className="achievement-item">
+                <div className="achievement-icon-wrapper star-wrapper">
+                  <Star size={20} />
+                </div>
+                <div className="achievement-details">
+                  <h4>3★ CodeChef Programmer</h4>
+                  <p>Division 2. Highest rating 1700 — ranked #312 globally and #280 in India.</p>
+                </div>
+              </div>
+              
+              <div className="achievement-item">
+                <div className="achievement-icon-wrapper">
+                  <Code2 size={20} />
+                </div>
+                <div className="achievement-details">
+                  <h4>DSA Rating 1700</h4>
+                  <p>Ranked #693 globally and #570 in India for algorithmic problem solving.</p>
+                </div>
+              </div>
+
+              <div className="achievement-item">
+                <div className="achievement-icon-wrapper gold-wrapper">
+                  <Medal size={20} />
+                </div>
+                <div className="achievement-details">
+                  <h4>Problem Solver Gold Badge</h4>
+                  <p>Successfully solved 640+ competitive programming problems.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Certifications Column */}
+          <div className="achievement-column glass">
+            <div className="column-header">
+              <Award size={28} className="column-icon" />
+              <h3>Certifications</h3>
+            </div>
+            
+            <div className="cert-list">
+              <div className="cert-item">
+                <h4>CodeChef</h4>
+                <ul>
+                  <li>Java Programming</li>
+                  <li>Algorithmic Problem Solving Using Java</li>
+                </ul>
+              </div>
+              
+              <div className="cert-item">
+                <h4>freeCodeCamp</h4>
+                <ul>
+                  <li>Frontend Development Libraries</li>
+                  <li>Legacy Responsive Web Design</li>
+                </ul>
+              </div>
+
+              <div className="cert-item">
+                <h4>Simplilearn</h4>
+                <ul>
+                  <li>Python Django 101</li>
+                  <li>Introduction to ASP.NET</li>
+                  <li>Mathematics for Data Science</li>
+                </ul>
+              </div>
+
+              <div className="cert-item">
+                <h4>Cambridge</h4>
+                <ul>
+                  <li>Linguaskill Certification</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </section>
+  );
+};
+
+export default Achievements;

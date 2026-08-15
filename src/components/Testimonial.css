@@ -37,10 +37,14 @@
 }
 
 .author-avatar {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 10%;
+  background-color: var(--color-primary-soft);
+  border: 2px solid white;
+  box-shadow: var(--shadow-md);
 }
 
 .author-name {

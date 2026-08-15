@@ -1,5 +1,5 @@
 import React from 'react';
-import { Quote } from 'lucide-react';
+import { Target } from 'lucide-react';
 import './Testimonial.css';
 
 const Testimonial: React.FC = () => {
@@ -8,16 +8,16 @@ const Testimonial: React.FC = () => {
       <div className="container">
         <div className="testimonial-card glass">
           <div className="quote-icon">
-            <Quote size={48} />
+            <Target size={48} />
           </div>
           <p className="testimonial-text">
-            Aarav is a fantastic designer who truly understands our brand and audience. The new website exceeded our expectations and boosted our business.
+            "I am currently focused on building AI-driven full-stack applications, deepening my expertise in Machine Learning algorithms, and solving complex Data Structures & Algorithms problems to write highly optimized code."
           </p>
           <div className="testimonial-author">
-            <img src="/assets/avatar.png" alt="James Carter" className="author-avatar" />
+            <img src="/assets/hero.png" alt="Satyam Kumar Kapri" className="author-avatar" />
             <div>
-              <h4 className="author-name">James Carter</h4>
-              <p className="author-title">CEO, Nexora Agency</p>
+              <h4 className="author-name">Satyam Kumar Kapri</h4>
+              <p className="author-title">Current Focus & Objectives</p>
             </div>
           </div>
         </div>

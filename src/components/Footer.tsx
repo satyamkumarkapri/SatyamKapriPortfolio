@@ -1,5 +1,6 @@
 import React from 'react';
-import { Send, Link as LinkIcon } from 'lucide-react';
+import { Send } from 'lucide-react';
+import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -13,11 +14,11 @@ const Footer: React.FC = () => {
               <span className="logo-icon">SK</span>
               <div className="logo-text">
                 <span className="logo-name">SATYAM KUMAR KAPRI</span>
-                <span className="logo-title">WEB DESIGNER</span>
+                <span className="logo-title">AI & SOFTWARE ENGINEERING</span>
               </div>
             </a>
             <p className="footer-desc">
-              Designing digital experiences that inspire, engage and deliver results.
+              Building intelligent systems and robust software solutions.
             </p>
           </div>
 
@@ -35,15 +36,15 @@ const Footer: React.FC = () => {
           <div className="footer-links">
             <h4 className="footer-heading">FOLLOW ME</h4>
             <ul>
-              <li><a href="https://instagram.com/btw_its._satyam" target="_blank" rel="noreferrer"><LinkIcon size={16} /> Instagram</a></li>
-              <li><a href="https://github.com/satyamkumarkapri" target="_blank" rel="noreferrer"><LinkIcon size={16} /> Github</a></li>
-              <li><a href="https://linkedin.com/in/satyamkumarkapri" target="_blank" rel="noreferrer"><LinkIcon size={16} /> LinkedIn</a></li>
+              <li><a href="https://instagram.com/btw_its._satyam" target="_blank" rel="noreferrer" className="social-link instagram"><FaInstagram size={18} /> Instagram</a></li>
+              <li><a href="https://github.com/satyamkumarkapri" target="_blank" rel="noreferrer" className="social-link github"><FaGithub size={18} /> Github</a></li>
+              <li><a href="https://linkedin.com/in/satyamkumarkapri" target="_blank" rel="noreferrer" className="social-link linkedin"><FaLinkedin size={18} /> LinkedIn</a></li>
             </ul>
           </div>
 
           <div className="footer-newsletter">
             <h4 className="footer-heading">NEWSLETTER</h4>
-            <p>Get design tips & insights straight to your inbox.</p>
+            <p>Get tech insights & project updates straight to your inbox.</p>
             <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
               <input type="email" placeholder="Your email address" required />
               <button type="submit" className="btn-submit">

@@ -43,11 +43,27 @@
   gap: var(--spacing-2);
   color: var(--color-text-muted);
   font-size: 0.85rem;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
 .footer-links a:hover {
   color: var(--color-primary);
+}
+
+.social-link:hover {
+  transform: translateX(4px);
+}
+
+.social-link.instagram:hover {
+  color: #E1306C;
+}
+
+.social-link.github:hover {
+  color: var(--color-text);
+}
+
+.social-link.linkedin:hover {
+  color: #0077B5;
 }
 
 .footer-newsletter p {
