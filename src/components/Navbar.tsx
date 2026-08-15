@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <header className="navbar glass">
       <div className="container navbar-container">
@@ -13,19 +18,29 @@ const Navbar: React.FC = () => {
           </div>
         </a>
         
-        <nav className="nav-links">
-          <a href="#home" className="active">HOME</a>
-          <a href="#about">ABOUT</a>
-          <a href="#services">SERVICES</a>
-          <a href="#projects">PROJECTS</a>
-          <a href="#process">PROCESS</a>
-          <a href="#blog">BLOG</a>
-          <a href="#contact">CONTACT</a>
+        {/* Desktop Menu */}
+        <nav className={`nav-links ${isOpen ? 'nav-open' : ''}`}>
+          <a href="#home" onClick={() => setIsOpen(false)}>HOME</a>
+          <a href="#about" onClick={() => setIsOpen(false)}>ABOUT</a>
+          <a href="#projects" onClick={() => setIsOpen(false)}>PROJECTS</a>
+          <a href="#achievements" onClick={() => setIsOpen(false)}>ACHIEVEMENTS</a>
+          <a href="#contact" onClick={() => setIsOpen(false)}>CONTACT</a>
+          
+          <a href="#contact" className="btn btn-outline btn-sm mobile-only" onClick={() => setIsOpen(false)}>
+            LET'S TALK <span className="arrow">↗</span>
+          </a>
         </nav>
         
-        <a href="#contact" className="btn btn-outline btn-sm">
-          LET'S TALK <span className="arrow">↗</span>
-        </a>
+        <div className="nav-right">
+          <a href="#contact" className="btn btn-outline btn-sm desktop-only">
+            LET'S TALK <span className="arrow">↗</span>
+          </a>
+          
+          {/* Hamburger Icon */}
+          <button className="mobile-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
     </header>
   );
