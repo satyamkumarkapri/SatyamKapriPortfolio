@@ -35,6 +35,7 @@ const projects = [
     image: '/assets/project3.png',
     link: 'https://github.com/satyamkumarkapri/Resource_Booking_Project'
   }
+  
 ];
 
 const Projects: React.FC = () => {

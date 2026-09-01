@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
           <span className="logo-icon">SK</span>
           <div className="logo-text">
             <span className="logo-name">SATYAM KUMAR KAPRI</span>
-            <span className="logo-title">WEB DESIGNER</span>
+            <span className="logo-title">FULL STACK DEVELOPER</span>
           </div>
         </a>
         

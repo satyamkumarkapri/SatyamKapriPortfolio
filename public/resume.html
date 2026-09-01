@@ -20,20 +20,25 @@
             font-family: "Times New Roman", Times, serif;
             color: var(--text-color);
             background: #fff;
-            font-size: 11pt;
-            line-height: 1.3;
+            font-size: 10.5pt;
+            line-height: 1.25;
         }
 
         .resume-container {
             max-width: 800px; /* Standard A4 width approx */
             margin: 0 auto;
-            padding: 40px;
+            padding: 30px 40px;
         }
 
         /* For printing to PDF */
         @media print {
+            @page {
+                size: A4;
+                margin: 0.5in;
+            }
             body {
                 background: none;
+                font-size: 10pt;
             }
             .resume-container {
                 padding: 0;
@@ -55,18 +60,18 @@
 
         .header {
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .name {
-            font-size: 24pt;
+            font-size: 22pt;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             letter-spacing: 1px;
         }
 
         .contact-info {
-            font-size: 11pt;
+            font-size: 10.5pt;
         }
 
         .contact-info a {
@@ -74,20 +79,20 @@
         }
 
         .section {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .section-title {
-            font-size: 13pt;
+            font-size: 12pt;
             font-weight: bold;
             text-transform: uppercase;
             border-bottom: 1px solid #000;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             padding-bottom: 2px;
         }
 
         .item {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .item-header {
@@ -110,7 +115,7 @@
 
         ul {
             padding-left: 18px;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         li {
@@ -123,7 +128,7 @@
         }
 
         .skills-list li {
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
         
         .print-btn {
@@ -167,6 +172,7 @@
         <!-- EDUCATION -->
         <div class="section">
             <div class="section-title">Education</div>
+            
             <div class="item">
                 <div class="item-header">
                     <span class="item-title">KL Deemed to be University</span>
@@ -178,6 +184,87 @@
                 </div>
                 <ul>
                     <li>Relevant coursework: Data Structures & Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks, Software Engineering, Discrete Mathematics.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">L.N. College, Shahpur, Amarpur, Banka (BSEB)</span>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-header">
+                    <span class="item-subtitle">Intermediate (Class XII) - (PCMB)</span>
+                    <span class="item-date">Percentage: 65.4% </span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">St. Joseph's School, Jagatpur (ICSE)</span>
+                    <span class="item-date">2023</span>
+                </div>
+                <div class="item-header">
+                    <span class="item-subtitle">Indian Certificate of Secondary Education (Class X)</span>
+                    <span class="item-date">Percentage: 73.2%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section">
+            <div class="section-title">Projects</div>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">COVID-19 Data Analysis Dashboard</span>
+                    <span class="item-subtitle">Python, FastAPI, React</span>
+                </div>
+                <ul>
+                    <li>Built a full-stack dashboard with FastAPI REST APIs to analyze and forecast real-time COVID-19 data.</li>
+                    <li>Deployed on Hugging Face Spaces for public access and data visualization.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Campus Placement Prediction</span>
+                    <span class="item-subtitle">Python, Machine Learning, scikit-learn</span>
+                </div>
+                <ul>
+                    <li>Developed a machine learning model to predict student placements based on academic performance and skill sets.</li>
+                    <li>Implemented data preprocessing and classification algorithms to achieve high prediction accuracy.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">HealthNet – Intelligent Hospital Resource Management</span>
+                    <span class="item-subtitle">Java, OOP, Data Structures</span>
+                </div>
+                <ul>
+                    <li>Designed a resource management system covering patient registration and appointment scheduling.</li>
+                    <li>Optimized lookup operations using Java Collections Framework (HashMap, Queue, Stack).</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">API Dashboard & Product Catalogue Management</span>
+                    <span class="item-subtitle">FastAPI, PostgreSQL, Java</span>
+                </div>
+                <ul>
+                    <li>Designed RESTful APIs backed by PostgreSQL and built an interactive analytics dashboard.</li>
+                    <li>Developed a relational inventory application in Java with full CRUD functionality.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Hospital Navigation System</span>
+                    <span class="item-subtitle">Python, HTML, CSS, Render</span>
+                </div>
+                <ul>
+                    <li>Designed and deployed a responsive web application to help visitors navigate hospital facilities.</li>
                 </ul>
             </div>
         </div>
@@ -193,75 +280,7 @@
             </ul>
         </div>
 
-        <!-- PROJECTS -->
-        <div class="section">
-            <div class="section-title">Projects</div>
-            
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">COVID-19 Data Analysis Dashboard</span>
-                    <span class="item-subtitle">Python, FastAPI, JavaScript</span>
-                </div>
-                <ul>
-                    <li>Engineered a full-stack analytics dashboard by building REST APIs in FastAPI to serve statistical models and forecasts over real-time COVID-19 datasets.</li>
-                    <li>Implemented data visualization and trend-forecasting features, translating raw case data into actionable insights for end users.</li>
-                    <li>Deployed the application on Hugging Face Spaces, making it publicly accessible with zero-downtime hosting.</li>
-                </ul>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">HealthNet – Intelligent Hospital Resource Management</span>
-                    <span class="item-subtitle">Java, OOP, Data Structures</span>
-                </div>
-                <ul>
-                    <li>Designed a hospital resource management system in Java covering patient registration, appointment scheduling, and resource allocation.</li>
-                    <li>Applied HashMap, Queue, and Stack from the Java Collections Framework to optimize lookup and scheduling operations.</li>
-                </ul>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">PhonePe Payment System (Simulation)</span>
-                    <span class="item-subtitle">Java</span>
-                </div>
-                <ul>
-                    <li>Built a digital wallet simulation supporting fund transfers and transaction history using object-oriented design principles.</li>
-                    <li>Structured core modules around the Java Collections Framework to model accounts and transaction records efficiently.</li>
-                </ul>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Hospital Navigation System</span>
-                    <span class="item-subtitle">Python, HTML, CSS, Render</span>
-                </div>
-                <ul>
-                    <li>Designed and deployed a responsive web application to help patients and visitors navigate hospital facilities; live at hospitalnavigationsystem.onrender.com.</li>
-                </ul>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">API Dashboard & Product Catalogue Management System</span>
-                    <span class="item-subtitle">FastAPI, PostgreSQL, Java, SQL</span>
-                </div>
-                <ul>
-                    <li>Designed RESTful APIs backed by PostgreSQL and built an interactive analytics dashboard with full CRUD functionality.</li>
-                    <li>Developed a relational inventory/catalogue management application in Java with complete CRUD database integration.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- COMPETITIVE PROGRAMMING -->
-        <div class="section">
-            <div class="section-title">Competitive Programming</div>
-            <ul>
-                <li><strong>3 ★ CodeChef programmer</strong> (Division 2); highest rating 1700 — ranked #312 globally and #280 in India.</li>
-                <li><strong>DSA rating 1700</strong>, ranked #693 globally and #570 in India for algorithmic problem solving.</li>
-                <li>Solved 460+ competitive programming problems; awarded the Problem Solver Gold Badge.</li>
-            </ul>
-        </div>
+       
 
         <!-- CERTIFICATIONS -->
         <div class="section">
