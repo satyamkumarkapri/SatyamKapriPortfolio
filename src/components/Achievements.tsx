@@ -29,8 +29,8 @@ const Achievements: React.FC = () => {
                   <Star size={20} />
                 </div>
                 <div className="achievement-details">
-                  <h4>3★ CodeChef Programmer</h4>
-                  <p>Division 2. Highest rating 1700 — ranked #312 globally and #280 in India.</p>
+                  <h4>4★ CodeChef Programmer</h4>
+                  <p>Division 2. Highest rating 2128 — ranked #2196 globally and #1825 in India.</p>
                 </div>
               </div>
               
@@ -39,8 +39,8 @@ const Achievements: React.FC = () => {
                   <Code2 size={20} />
                 </div>
                 <div className="achievement-details">
-                  <h4>DSA Rating 1700</h4>
-                  <p>Ranked #693 globally and #570 in India for algorithmic problem solving.</p>
+                  <h4>DSA Rating 1846</h4>
+                  <p>Highest rating 1904 — ranked #556 globally and #535 in India for algorithmic problem solving.</p>
                 </div>
               </div>
 

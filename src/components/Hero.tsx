@@ -45,8 +45,8 @@ const Hero: React.FC = () => {
             <div className="stat-item">
               <Star className="stat-icon" />
               <div>
-                <div className="stat-value">3★ CodeChef</div>
-                <div className="stat-label">DIV 2 (1700 MAX)</div>
+                <div className="stat-value">4★ CodeChef</div>
+                <div className="stat-label">DIV 2 (2128 MAX)</div>
               </div>
             </div>
           </div>
