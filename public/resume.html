@@ -5,137 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satyam Kumar Kapri - Resume</title>
     <style>
-        :root {
-            --text-color: #000;
-            --link-color: #000;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: "Times New Roman", Times, serif;
-            color: var(--text-color);
+            color: #000;
             background: #fff;
-            font-size: 10.5pt;
-            line-height: 1.25;
+            font-size: 9.2pt;
+            line-height: 1.18;
         }
 
+        a { color: #000; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Screen preview ── */
         .resume-container {
-            max-width: 800px; /* Standard A4 width approx */
+            width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
-            padding: 30px 40px;
+            padding: 10mm 12mm;
+            background: #fff;
         }
 
-        /* For printing to PDF */
+        /* ── Print ── */
         @media print {
-            @page {
-                size: A4;
-                margin: 0.5in;
-            }
-            body {
-                background: none;
-                font-size: 10pt;
-            }
-            .resume-container {
-                padding: 0;
-                max-width: 100%;
-            }
-            .no-print {
-                display: none !important;
-            }
+            @page { size: A4; margin: 10mm 12mm; }
+            body { font-size: 9.2pt; background: none; }
+            .resume-container { width: 100%; min-height: unset; margin: 0; padding: 0; }
+            .no-print { display: none !important; }
         }
 
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
+        /* ── Header ── */
+        .header { text-align: center; margin-bottom: 5pt; }
+        .name { font-size: 17pt; font-weight: bold; letter-spacing: 1.5px; margin-bottom: 2pt; }
+        .contact-info { font-size: 8.8pt; }
+        .contact-info a { text-decoration: underline; }
 
-        .header {
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        .name {
-            font-size: 22pt;
-            font-weight: bold;
-            margin-bottom: 4px;
-            letter-spacing: 1px;
-        }
-
-        .contact-info {
-            font-size: 10.5pt;
-        }
-
-        .contact-info a {
-            text-decoration: underline;
-        }
-
-        .section {
-            margin-bottom: 10px;
-        }
-
+        /* ── Sections ── */
+        .section { margin-bottom: 5pt; }
         .section-title {
-            font-size: 12pt;
+            font-size: 9.6pt;
             font-weight: bold;
             text-transform: uppercase;
-            border-bottom: 1px solid #000;
-            margin-bottom: 5px;
-            padding-bottom: 2px;
+            letter-spacing: 0.5px;
+            border-bottom: 0.75pt solid #000;
+            margin-bottom: 3pt;
+            padding-bottom: 1pt;
         }
 
-        .item {
-            margin-bottom: 6px;
-        }
+        .item { margin-bottom: 3.5pt; }
 
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
         }
+        .item-title { font-weight: bold; }
+        .item-subtitle { font-style: italic; }
+        .item-date { font-weight: normal; white-space: nowrap; margin-left: 6pt; }
 
-        .item-title {
-            font-weight: bold;
-        }
-        
-        .item-subtitle {
-            font-style: italic;
-        }
+        ul { padding-left: 14pt; margin-top: 1pt; }
+        li { margin-bottom: 1pt; }
 
-        .item-date {
-            font-weight: normal;
-        }
+        .skills-list { list-style: none; padding-left: 0; }
+        .skills-list li { margin-bottom: 1.5pt; }
 
-        ul {
-            padding-left: 18px;
-            margin-top: 2px;
-        }
-
-        li {
-            margin-bottom: 2px;
+        /* ── Two-column layout for bottom sections ── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12pt;
         }
 
-        .skills-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .skills-list li {
-            margin-bottom: 2px;
-        }
-        
+        /* ── Print button (screen only) ── */
         .print-btn {
             display: block;
             width: 200px;
-            margin: 20px auto;
-            padding: 10px;
+            margin: 14px auto;
+            padding: 8px;
             text-align: center;
             background: #7C3AED;
             color: white;
@@ -143,12 +90,9 @@
             font-family: sans-serif;
             font-weight: bold;
             cursor: pointer;
+            font-size: 13px;
         }
-
-        .print-btn:hover {
-            background: #6D28D9;
-            text-decoration: none;
-        }
+        .print-btn:hover { background: #6D28D9; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -156,15 +100,15 @@
     <a href="#" onclick="window.print(); return false;" class="print-btn no-print">💾 Save as PDF / Print</a>
 
     <div class="resume-container">
-        
+
         <!-- HEADER -->
         <div class="header">
             <div class="name">SATYAM KUMAR KAPRI</div>
             <div class="contact-info">
-                +91 7061171017 | 
-                <a href="mailto:satyamkumarkapri17@gmail.com">satyamkumarkapri17@gmail.com</a> | 
-                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> | 
-                <a href="https://github.com/satyamkumarkapri" target="_blank">GitHub</a> | 
+                +91 7061171017 |
+                <a href="mailto:satyamkumarkapri17@gmail.com">satyamkumarkapri17@gmail.com</a> |
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/satyamkumarkapri" target="_blank">GitHub</a> |
                 <a href="#" target="_blank">Hugging Face</a>
             </div>
         </div>
@@ -172,56 +116,49 @@
         <!-- EDUCATION -->
         <div class="section">
             <div class="section-title">Education</div>
-            
+
             <div class="item">
                 <div class="item-header">
                     <span class="item-title">KL Deemed to be University</span>
                     <span class="item-date">Expected Graduation: 2029</span>
                 </div>
                 <div class="item-header">
-                    <span class="item-subtitle">B.Tech, Computer Science & Engineering (Project Based Learning)</span>
+                    <span class="item-subtitle">B.Tech, Computer Science &amp; Engineering &mdash; PBL (Project Based Learning), Trimester Mode</span>
                     <span class="item-date">CGPA: 9.12 / 10.0</span>
                 </div>
                 <ul>
-                    <li>Relevant coursework: Data Structures & Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks, Software Engineering, Discrete Mathematics.</li>
+                    <li>Delivery: <strong>PBL &ndash; Trimester</strong> (12 trimesters &bull; 185 credits &bull; 64 courses) &nbsp;|&nbsp; Coursework: DSA, OOP, DBMS, OS, Computer Networks, Software Engineering, Discrete Mathematics.</li>
                 </ul>
             </div>
 
             <div class="item">
                 <div class="item-header">
                     <span class="item-title">L.N. College, Shahpur, Amarpur, Banka (BSEB)</span>
-                    <span class="item-date">2025</span>
+                    <span class="item-date">2025 &nbsp;|&nbsp; Percentage: 65.4%</span>
                 </div>
-                <div class="item-header">
-                    <span class="item-subtitle">Intermediate (Class XII) - (PCMB)</span>
-                    <span class="item-date">Percentage: 65.4% </span>
-                </div>
+                <div class="item-subtitle">Intermediate (Class XII) &mdash; PCMB</div>
             </div>
 
             <div class="item">
                 <div class="item-header">
                     <span class="item-title">St. Joseph's School, Jagatpur (ICSE)</span>
-                    <span class="item-date">2023</span>
+                    <span class="item-date">2023 &nbsp;|&nbsp; Percentage: 73.2%</span>
                 </div>
-                <div class="item-header">
-                    <span class="item-subtitle">Indian Certificate of Secondary Education (Class X)</span>
-                    <span class="item-date">Percentage: 73.2%</span>
-                </div>
+                <div class="item-subtitle">Indian Certificate of Secondary Education (Class X)</div>
             </div>
         </div>
 
         <!-- PROJECTS -->
         <div class="section">
             <div class="section-title">Projects</div>
-            
+
             <div class="item">
                 <div class="item-header">
                     <span class="item-title">COVID-19 Data Analysis Dashboard</span>
                     <span class="item-subtitle">Python, FastAPI, React</span>
                 </div>
                 <ul>
-                    <li>Built a full-stack dashboard with FastAPI REST APIs to analyze and forecast real-time COVID-19 data.</li>
-                    <li>Deployed on Hugging Face Spaces for public access and data visualization.</li>
+                    <li>Built a full-stack dashboard with FastAPI REST APIs to analyze and forecast real-time COVID-19 data; deployed on Hugging Face Spaces.</li>
                 </ul>
             </div>
 
@@ -231,30 +168,27 @@
                     <span class="item-subtitle">Python, Machine Learning, scikit-learn</span>
                 </div>
                 <ul>
-                    <li>Developed a machine learning model to predict student placements based on academic performance and skill sets.</li>
-                    <li>Implemented data preprocessing and classification algorithms to achieve high prediction accuracy.</li>
+                    <li>Developed an ML model to predict student placements from academic performance; applied data preprocessing and classification algorithms.</li>
                 </ul>
             </div>
 
             <div class="item">
                 <div class="item-header">
-                    <span class="item-title">HealthNet – Intelligent Hospital Resource Management</span>
+                    <span class="item-title">HealthNet &ndash; Intelligent Hospital Resource Management</span>
                     <span class="item-subtitle">Java, OOP, Data Structures</span>
                 </div>
                 <ul>
-                    <li>Designed a resource management system covering patient registration and appointment scheduling.</li>
-                    <li>Optimized lookup operations using Java Collections Framework (HashMap, Queue, Stack).</li>
+                    <li>Designed a resource management system for patient registration and scheduling; optimized lookups using Java Collections (HashMap, Queue, Stack).</li>
                 </ul>
             </div>
 
             <div class="item">
                 <div class="item-header">
-                    <span class="item-title">API Dashboard & Product Catalogue Management</span>
+                    <span class="item-title">API Dashboard &amp; Product Catalogue Management</span>
                     <span class="item-subtitle">FastAPI, PostgreSQL, Java</span>
                 </div>
                 <ul>
-                    <li>Designed RESTful APIs backed by PostgreSQL and built an interactive analytics dashboard.</li>
-                    <li>Developed a relational inventory application in Java with full CRUD functionality.</li>
+                    <li>Designed RESTful APIs backed by PostgreSQL with an analytics dashboard; built a Java inventory app with full CRUD functionality.</li>
                 </ul>
             </div>
 
@@ -264,7 +198,7 @@
                     <span class="item-subtitle">Python, HTML, CSS, Render</span>
                 </div>
                 <ul>
-                    <li>Designed and deployed a responsive web application to help visitors navigate hospital facilities.</li>
+                    <li>Designed and deployed a responsive web app to help hospital visitors navigate facilities.</li>
                 </ul>
             </div>
         </div>
@@ -273,25 +207,69 @@
         <div class="section">
             <div class="section-title">Technical Skills</div>
             <ul class="skills-list">
-                <li><strong>Languages:</strong> Java, Python, JavaScript, SQL, HTML5, CSS3</li>
-                <li><strong>Frameworks:</strong> Spring Boot, FastAPI, React, Flask</li>
+                <li><strong>Languages:</strong> Java, Python, JavaScript, TypeScript, SQL, HTML5, CSS3</li>
+                <li><strong>Frameworks &amp; Tools:</strong> Spring Boot, FastAPI, React, Flask, Vite &nbsp;|&nbsp; Git/GitHub, Docker, Postman, VS Code, IntelliJ IDEA, Render, Hugging Face Spaces</li>
                 <li><strong>Databases:</strong> PostgreSQL, MongoDB, MySQL</li>
-                <li><strong>Tools:</strong> Git/GitHub, Docker, Postman, VS Code, IntelliJ IDEA, Eclipse, Render, Hugging Face Spaces</li>
             </ul>
         </div>
 
-       
+        <!-- ACHIEVEMENTS & CERTIFICATIONS — two-column -->
+        <div class="two-col">
 
-        <!-- CERTIFICATIONS -->
-        <div class="section">
-            <div class="section-title">Certifications</div>
-            <ul>
-                <li><strong>CodeChef</strong> — Java Programming; Algorithmic Problem Solving Using Java</li>
-                <li><strong>freeCodeCamp</strong> — Frontend Development Libraries; Legacy Responsive Web Design</li>
-                <li><strong>Simplilearn</strong> — Python Django 101; Introduction to ASP.NET; Mathematics for Data Science</li>
-                <li><strong>Cambridge</strong> — Linguaskill Certification</li>
-            </ul>
-        </div>
+            <!-- Achievements -->
+            <div class="section">
+                <div class="section-title">Achievements &amp; Extracurriculars</div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">4&#9733; CodeChef Programmer</span>
+                        <span class="item-date">Ongoing</span>
+                    </div>
+                    <ul>
+                        <li>Highest rating <strong>2128</strong> &mdash; ranked <strong>#2196 globally</strong>, <strong>#1825 in India</strong> (Division 2).</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">DSA Rating 1846 &mdash; GFG</span>
+                        <span class="item-date">Ongoing</span>
+                    </div>
+                    <ul>
+                        <li>Highest rating <strong>1904</strong> &mdash; <strong>#556 globally</strong>, <strong>#535 in India</strong>; 640+ problems solved.</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Adobe University Hackathon</span>
+                        <span class="item-date">Aug 2026</span>
+                    </div>
+                    <ul><li>Cleared Round 1 Online Assessment (MCQ + Coding).</li></ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">RPA Club Member &mdash; KL University</span>
+                        <span class="item-date">2025 &ndash; Present</span>
+                    </div>
+                    <ul><li>Exploring automation, AI-driven workflows, and intelligent productivity tools.</li></ul>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="section">
+                <div class="section-title">Certifications</div>
+                <ul>
+                    <li><strong>Adobe</strong> &mdash; University Hackathon Round 1 Qualifier (Aug 2026)</li>
+                    <li><strong>CodeChef</strong> &mdash; Java Programming; Algorithmic Problem Solving Using Java</li>
+                    <li><strong>freeCodeCamp</strong> &mdash; Frontend Development Libraries; Legacy Responsive Web Design</li>
+                    <li><strong>Simplilearn</strong> &mdash; Python Django 101; Introduction to ASP.NET; Mathematics for Data Science</li>
+                    <li><strong>Cambridge</strong> &mdash; Linguaskill Certification</li>
+                </ul>
+            </div>
+
+        </div><!-- end two-col -->
 
     </div>
 </body>

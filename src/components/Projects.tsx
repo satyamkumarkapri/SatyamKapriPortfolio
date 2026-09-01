@@ -18,6 +18,8 @@ const projects = [
     id: 1,
     title: 'HealthNet',
     category: 'Healthcare Management System',
+    description: 'A comprehensive hospital management platform with patient records, appointments, and billing.',
+    tags: ['React', 'Node.js', 'MongoDB'],
     image: '/assets/project1.png',
     link: 'https://github.com/satyamkumarkapri/HealthNet'
   },
@@ -25,6 +27,8 @@ const projects = [
     id: 2,
     title: 'HealthNet Intelligent System',
     category: 'Java, OOP, Data Structures',
+    description: 'An intelligent healthcare backend using OOP principles and advanced data structures for efficient data management.',
+    tags: ['Java', 'OOP', 'DSA'],
     image: '/assets/project2.png',
     link: 'https://github.com/satyamkumarkapri/PhonePeProjectPBL'
   },
@@ -32,10 +36,11 @@ const projects = [
     id: 3,
     title: 'PhonePe Payment System',
     category: 'Java',
+    description: 'A simulated digital payments system modelled on PhonePe, built with core Java and object-oriented design.',
+    tags: ['Java', 'OOP', 'System Design'],
     image: '/assets/project3.png',
     link: 'https://github.com/satyamkumarkapri/Resource_Booking_Project'
   }
-  
 ];
 
 const Projects: React.FC = () => {
@@ -91,11 +96,22 @@ const Projects: React.FC = () => {
             <div key={project.id} className="project-card glass">
               <div className="project-image-wrapper">
                 <img src={project.image} alt={project.title} className="project-image" />
+                <div className="project-overlay">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="overlay-link">
+                    <ExternalLink size={20} /> View Project
+                  </a>
+                </div>
               </div>
               <div className="project-info">
-                <div>
+                <div className="project-meta">
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-category">{project.category}</p>
+                  <p className="project-description">{project.description}</p>
+                  <div className="project-tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="project-tag">{tag}</span>
+                    ))}
+                  </div>
                 </div>
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
                   <ExternalLink size={20} />

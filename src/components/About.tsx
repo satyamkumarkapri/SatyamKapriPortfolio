@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, Circle } from 'lucide-react';
 import './About.css';
 
 const About: React.FC = () => {
@@ -11,8 +11,8 @@ const About: React.FC = () => {
     graduating: 2029,
     location: "India",
     interests: ["Artificial Intelligence", "Machine Learning", "Full Stack Dev", "DSA"],
-    vision: "Blending engineering excellence with business leadership to build\\n              technology-driven ventures that create meaningful impact.",
-    funFact: "When I'm not coding in Java or Python, I'm dissecting business\\n               systems and simplifying complex problems!",
+    vision: "Blending engineering excellence with business leadership to build technology-driven ventures that create meaningful impact.",
+    funFact: "When I'm not coding in Java or Python, I'm dissecting business systems and simplifying complex problems!",
     currentFocus: () => ["Applied ML", "System Design", "Shipping Projects"],
     reachMe: "satyamkumarkapri17@gmail.com"
 };`;
@@ -22,6 +22,22 @@ const About: React.FC = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  const lines = [
+    `<span class="token keyword">const</span> <span class="token variable">satyam</span> <span class="token operator">=</span> <span class="token punctuation">{</span>`,
+    `    <span class="token property">role</span><span class="token punctuation">:</span> <span class="token string">"B.Tech CSE Student"</span><span class="token punctuation">,</span>`,
+    `    <span class="token property">university</span><span class="token punctuation">:</span> <span class="token string">"KL University"</span><span class="token punctuation">,</span>`,
+    `    <span class="token property">graduating</span><span class="token punctuation">:</span> <span class="token number">2029</span><span class="token punctuation">,</span>`,
+    `    <span class="token property">location</span><span class="token punctuation">:</span> <span class="token string">"India"</span><span class="token punctuation">,</span>`,
+    `    <span class="token property">interests</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Artificial Intelligence"</span><span class="token punctuation">, </span><span class="token string">"Machine Learning"</span><span class="token punctuation">, </span><span class="token string">"Full Stack Dev"</span><span class="token punctuation">, </span><span class="token string">"DSA"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>`,
+    `    <span class="token property">vision</span><span class="token punctuation">:</span> <span class="token string">"Blending engineering excellence with business leadership to build</span>`,
+    `              <span class="token string">technology-driven ventures that create meaningful impact."</span><span class="token punctuation">,</span>`,
+    `    <span class="token property">funFact</span><span class="token punctuation">:</span> <span class="token string">"When I'm not coding in Java or Python, I'm dissecting business</span>`,
+    `               <span class="token string">systems and simplifying complex problems!"</span><span class="token punctuation">,</span>`,
+    `    <span class="token property">currentFocus</span><span class="token punctuation">:</span> <span class="token punctuation">()</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span><span class="token string">"Applied ML"</span><span class="token punctuation">, </span><span class="token string">"System Design"</span><span class="token punctuation">, </span><span class="token string">"Shipping Projects"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>`,
+    `    <span class="token property">reachMe</span><span class="token punctuation">:</span> <span class="token string">"satyamkumarkapri17@gmail.com"</span>`,
+    `<span class="token punctuation">}</span><span class="token punctuation">;</span>`,
+  ];
 
   return (
     <section id="about" className="about section-padding">
@@ -35,39 +51,75 @@ const About: React.FC = () => {
         </div>
         
         <p className="about-description">
-          I'm a <strong>Computer Science & Engineering</strong> student at <strong>KL University</strong>, driven by curiosity about how intelligent algorithms work, how robust software solves real problems, and where technical innovation meets business strategy.
+          I'm a <strong>Computer Science &amp; Engineering</strong> student at <strong>KL University</strong>, driven by curiosity about how intelligent algorithms work, how robust software solves real problems, and where technical innovation meets business strategy.
         </p>
 
-        <div className="code-block-wrapper">
-          <button className="copy-btn" onClick={handleCopy} aria-label="Copy code">
-            {copied ? <Check size={16} /> : <Copy size={16} />}
-          </button>
-          <pre className="code-block">
-            <code dangerouslySetInnerHTML={{ __html: `<span class="token keyword">const</span> <span class="token variable">satyam</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token property">role</span><span class="token punctuation">:</span> <span class="token string">"B.Tech CSE Student"</span><span class="token punctuation">,</span>
-    <span class="token property">university</span><span class="token punctuation">:</span> <span class="token string">"KL University"</span><span class="token punctuation">,</span>
-    <span class="token property">graduating</span><span class="token punctuation">:</span> <span class="token number">2029</span><span class="token punctuation">,</span>
-    <span class="token property">location</span><span class="token punctuation">:</span> <span class="token string">"India"</span><span class="token punctuation">,</span>
-    <span class="token property">interests</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Artificial Intelligence"</span><span class="token punctuation">, </span><span class="token string">"Machine Learning"</span><span class="token punctuation">, </span><span class="token string">"Full Stack Dev"</span><span class="token punctuation">, </span><span class="token string">"DSA"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">vision</span><span class="token punctuation">:</span> <span class="token string">"Blending engineering excellence with business leadership to build\n              technology-driven ventures that create meaningful impact."</span><span class="token punctuation">,</span>
-    <span class="token property">funFact</span><span class="token punctuation">:</span> <span class="token string">"When I'm not coding in Java or Python, I'm dissecting business\n               systems and simplifying complex problems!"</span><span class="token punctuation">,</span>
-    <span class="token property">currentFocus</span><span class="token punctuation">:</span> <span class="token punctuation">()</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span><span class="token string">"Applied ML"</span><span class="token punctuation">, </span><span class="token string">"System Design"</span><span class="token punctuation">, </span><span class="token string">"Shipping Projects"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">reachMe</span><span class="token punctuation">:</span> <span class="token string">"satyamkumarkapri17@gmail.com"</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>` }} />
-          </pre>
+        {/* VS Code-style editor */}
+        <div className="code-editor">
+          {/* Title bar */}
+          <div className="editor-titlebar">
+            <div className="editor-dots">
+              <span className="dot dot-red" />
+              <span className="dot dot-yellow" />
+              <span className="dot dot-green" />
+            </div>
+            <div className="editor-filename">
+              <span className="editor-icon">{'{ }'}</span>
+              satyam.js
+            </div>
+            <button className="copy-btn" onClick={handleCopy} aria-label="Copy code">
+              {copied ? <Check size={14} /> : <Copy size={14} />}
+              <span>{copied ? 'Copied!' : 'Copy'}</span>
+            </button>
+          </div>
+
+          {/* Tab bar */}
+          <div className="editor-tabbar">
+            <div className="editor-tab active">satyam.js</div>
+          </div>
+
+          {/* Code area */}
+          <div className="editor-body">
+            <div className="line-numbers">
+              {lines.map((_, i) => (
+                <div key={i} className="line-num">{i + 1}</div>
+              ))}
+            </div>
+            <pre className="code-block">
+              <code>
+                {lines.map((line, i) => (
+                  <div
+                    key={i}
+                    className="code-line"
+                    dangerouslySetInnerHTML={{ __html: line }}
+                  />
+                ))}
+              </code>
+            </pre>
+          </div>
+
+          {/* Status bar */}
+          <div className="editor-statusbar">
+            <span>JavaScript</span>
+            <span>UTF-8</span>
+            <span>Ln {lines.length}, Col 2</span>
+          </div>
         </div>
 
         <div className="about-cards">
           <div className="about-card glass">
-            <h3 className="card-title"><span className="emoji-icon">🔭</span> Currently</h3>
+            <span className="emoji-icon">🔭</span>
+            <h3 className="card-title">Currently</h3>
             <p className="card-desc">Building intelligent, resource-optimized systems</p>
           </div>
           <div className="about-card glass">
-            <h3 className="card-title"><span className="emoji-icon">🧠</span> Learning</h3>
-            <p className="card-desc">Applied ML, system design & cloud fundamentals</p>
+            <span className="emoji-icon">🧠</span>
+            <h3 className="card-title">Learning</h3>
+            <p className="card-desc">Applied ML, system design &amp; cloud fundamentals</p>
           </div>
           <div className="about-card glass">
-            <h3 className="card-title"><span className="emoji-icon">🤝</span> Collaborate</h3>
+            <span className="emoji-icon">🤝</span>
+            <h3 className="card-title">Collaborate</h3>
             <p className="card-desc">AI/ML apps, full-stack platforms, DSA-driven design</p>
           </div>
         </div>
