@@ -60,31 +60,86 @@
 
 .hero-stats {
   display: flex;
-  gap: var(--spacing-8);
+  align-items: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  border-radius: 18px;
+  padding: 18px 28px;
+  width: fit-content;
+  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.07), 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s ease;
 }
 
-.stat-item {
+.hero-stats:hover {
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.13), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.stat-card {
   display: flex;
   align-items: center;
-  gap: var(--spacing-3);
+  gap: 12px;
+  padding: 4px 24px;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:first-child {
+  padding-left: 0;
+}
+
+.stat-card:last-child {
+  padding-right: 0;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(to bottom, transparent, rgba(124, 58, 237, 0.25), transparent);
+  flex-shrink: 0;
 }
 
 .stat-icon {
-  color: var(--color-primary-light);
+  color: var(--color-primary);
+  background: rgba(124, 58, 237, 0.08);
+  border-radius: 10px;
+  padding: 6px;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .stat-value {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.2;
+  color: var(--color-text);
+}
+
+.stat-sub {
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--color-text-muted);
 }
 
 .stat-label {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   color: var(--color-text-muted);
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
 /* Hero Image & Floating Elements */
@@ -259,6 +314,7 @@
   }
   .hero-actions, .hero-stats {
     justify-content: center;
+    margin: 0 auto;
   }
   .hero-image-wrapper {
     margin-top: var(--spacing-12);

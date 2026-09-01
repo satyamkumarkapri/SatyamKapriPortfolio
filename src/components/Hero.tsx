@@ -28,25 +28,27 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="hero-stats">
-            <div className="stat-item">
-              <GraduationCap className="stat-icon" />
-              <div>
+            <div className="stat-card">
+              <GraduationCap className="stat-icon" size={22} />
+              <div className="stat-info">
                 <div className="stat-value">KL University</div>
                 <div className="stat-label">B.TECH CSE '29</div>
               </div>
             </div>
-            <div className="stat-item">
-              <Award className="stat-icon" />
-              <div>
-                <div className="stat-value">9.12 / 10.0</div>
+            <div className="stat-divider" />
+            <div className="stat-card">
+              <Award className="stat-icon" size={22} />
+              <div className="stat-info">
+                <div className="stat-value">9.12 <span className="stat-sub">/ 10.0</span></div>
                 <div className="stat-label">CURRENT CGPA</div>
               </div>
             </div>
-            <div className="stat-item">
-              <Star className="stat-icon" />
-              <div>
-                <div className="stat-value">4★ CodeChef</div>
-                <div className="stat-label">DIV 2 (2128 MAX)</div>
+            <div className="stat-divider" />
+            <div className="stat-card">
+              <Star className="stat-icon" size={22} />
+              <div className="stat-info">
+                <div className="stat-value">4★ <span className="stat-sub">CodeChef</span></div>
+                <div className="stat-label">DIV 2 · 2128 MAX</div>
               </div>
             </div>
           </div>
