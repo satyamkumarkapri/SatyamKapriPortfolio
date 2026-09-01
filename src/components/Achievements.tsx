@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Award, Star, Code2, Medal } from 'lucide-react';
+import { Trophy, Award, Star, Code2, Medal, Zap } from 'lucide-react';
 import './Achievements.css';
 
 const Achievements: React.FC = () => {
@@ -53,6 +53,16 @@ const Achievements: React.FC = () => {
                   <p>Successfully solved 640+ competitive programming problems.</p>
                 </div>
               </div>
+
+              <div className="achievement-item">
+                <div className="achievement-icon-wrapper" style={{ background: 'linear-gradient(135deg, #FF0000, #FF6B6B)' }}>
+                  <Zap size={20} />
+                </div>
+                <div className="achievement-details">
+                  <h4>Adobe University Hackathon</h4>
+                  <p>Cleared Round 1 – Online Assessment (MCQ + Coding) of the Adobe University Hackathon, Aug 2026.</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -64,6 +74,13 @@ const Achievements: React.FC = () => {
             </div>
             
             <div className="cert-list">
+              <div className="cert-item">
+                <h4>Adobe</h4>
+                <ul>
+                  <li>Adobe University Hackathon – Round 1 Qualifier (Aug 2026)</li>
+                </ul>
+              </div>
+
               <div className="cert-item">
                 <h4>CodeChef</h4>
                 <ul>
