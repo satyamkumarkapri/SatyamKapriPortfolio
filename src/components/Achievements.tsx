@@ -63,6 +63,16 @@ const Achievements: React.FC = () => {
                   <p>Cleared Round 1 – Online Assessment (MCQ + Coding) of the Adobe University Hackathon, Aug 2026.</p>
                 </div>
               </div>
+
+              <div className="achievement-item">
+                <div className="achievement-icon-wrapper" style={{ background: 'linear-gradient(135deg, #0ea5e9, #6366f1)' }}>
+                  <Trophy size={20} />
+                </div>
+                <div className="achievement-details">
+                  <h4>RPA Club Member</h4>
+                  <p>Active member of the Robotic Process Automation (RPA) Club at KL University — exploring automation, AI-driven workflows, and intelligent productivity tools.</p>
+                </div>
+              </div>
             </div>
           </div>
 
