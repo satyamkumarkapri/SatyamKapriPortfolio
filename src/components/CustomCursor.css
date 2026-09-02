@@ -1,0 +1,47 @@
+/* Hide default cursor only if pointer is fine */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, input, textarea, select {
+    cursor: none !important;
+  }
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  transition: width 0.2s, height 0.2s;
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color-primary);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  /* Smooth trailing effect */
+  transition-property: width, height, border-color, background-color, transform;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.1s;
+  transition-timing-function: ease-out;
+}
+
+.cursor-ring.hovering {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.5);
+  backdrop-filter: blur(2px);
+}

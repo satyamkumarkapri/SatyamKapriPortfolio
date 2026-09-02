@@ -1,83 +1,176 @@
 import React from 'react';
-import { Wrench, Code2, Server, Database, Settings2 } from 'lucide-react';
+import { Code2, Layout, Server, Database, BrainCircuit, Settings2 } from 'lucide-react';
 import './TechStack.css';
 
+interface Skill {
+  name: string;
+  badge?: string;
+}
+
+interface TechCategory {
+  title: string;
+  subtitle: string;
+  icon: React.ElementType;
+  themeColor: string;
+  themeBg: string;
+  skills: Skill[];
+}
+
 const TechStack: React.FC = () => {
+  const techCategories: TechCategory[] = [
+    {
+      title: 'Languages & Core CS',
+      subtitle: 'Fundamentals & OOP',
+      icon: Code2,
+      themeColor: '#8B5CF6',
+      themeBg: 'rgba(139, 92, 246, 0.12)',
+      skills: [
+        { name: 'Java', badge: 'Core & OOP' },
+        { name: 'Python', badge: 'Scripting & ML' },
+        { name: 'JavaScript', badge: 'ES6+' },
+        { name: 'TypeScript', badge: 'Strict Types' },
+        { name: 'C / C++', badge: 'Systems' },
+        { name: 'SQL', badge: 'Relational' }
+      ]
+    },
+    {
+      title: 'Frontend Engineering',
+      subtitle: 'Reactive User Interfaces',
+      icon: Layout,
+      themeColor: '#06B6D4',
+      themeBg: 'rgba(6, 182, 212, 0.12)',
+      skills: [
+        { name: 'React.js', badge: 'Components' },
+        { name: 'TypeScript', badge: 'Type-Safe UI' },
+        { name: 'Vite', badge: 'Bundler' },
+        { name: 'Tailwind CSS', badge: 'Design System' },
+        { name: 'HTML5 / CSS3', badge: 'Semantic' },
+        { name: 'Responsive UI', badge: 'Mobile-first' }
+      ]
+    },
+    {
+      title: 'Backend & Services',
+      subtitle: 'Server Architectures & APIs',
+      icon: Server,
+      themeColor: '#10B981',
+      themeBg: 'rgba(16, 185, 129, 0.12)',
+      skills: [
+        { name: 'Node.js', badge: 'Runtime' },
+        { name: 'Express.js', badge: 'REST APIs' },
+        { name: 'Spring Boot', badge: 'Enterprise' },
+        { name: 'FastAPI', badge: 'Python APIs' },
+        { name: 'Microservices', badge: 'Distributed' },
+        { name: 'JWT Auth', badge: 'Security' }
+      ]
+    },
+    {
+      title: 'Databases & Storage',
+      subtitle: 'Data Persistence & Modeling',
+      icon: Database,
+      themeColor: '#F59E0B',
+      themeBg: 'rgba(245, 158, 11, 0.12)',
+      skills: [
+        { name: 'PostgreSQL', badge: 'Relational' },
+        { name: 'MongoDB', badge: 'NoSQL Docs' },
+        { name: 'Schema Design', badge: 'Normalization' },
+        { name: 'Data Indexing', badge: 'Query Tuning' },
+        { name: 'Aggregation', badge: 'Pipelines' },
+        { name: 'Data Security', badge: 'ACID' }
+      ]
+    },
+    {
+      title: 'AI/ML & Data Science',
+      subtitle: 'Intelligent Systems & Analytics',
+      icon: BrainCircuit,
+      themeColor: '#EC4899',
+      themeBg: 'rgba(236, 72, 153, 0.12)',
+      skills: [
+        { name: 'Scikit-Learn', badge: 'ML Models' },
+        { name: 'Pandas', badge: 'Data Wrangling' },
+        { name: 'NumPy', badge: 'Vector Math' },
+        { name: 'Hugging Face', badge: 'NLP Models' },
+        { name: 'ML Pipelines', badge: 'Feature Eng.' },
+        { name: 'Model Tuning', badge: 'Validation' }
+      ]
+    },
+    {
+      title: 'DevOps & Tooling',
+      subtitle: 'Workflow & Infrastructure',
+      icon: Settings2,
+      themeColor: '#3B82F6',
+      themeBg: 'rgba(59, 130, 246, 0.12)',
+      skills: [
+        { name: 'Git', badge: 'Version Control' },
+        { name: 'GitHub', badge: 'Collaboration' },
+        { name: 'Docker', badge: 'Containers' },
+        { name: 'Postman', badge: 'API Testing' },
+        { name: 'Render', badge: 'Deployment' },
+        { name: 'VS Code', badge: 'Dev Setup' }
+      ]
+    }
+  ];
+
   return (
     <section id="techstack" className="techstack section-padding">
       <div className="container">
         
-        <div className="techstack-header">
-          <Wrench size={32} className="techstack-icon" />
-          <h2 className="section-title">Tech Stack & Skills</h2>
+        <div className="section-header center-align">
+          <div className="badge">SKILLS</div>
+          <h2 className="section-title">Technical Arsenal</h2>
+          <p className="section-subtitle">
+            A comprehensive, battle-tested technology stack spanning frontend systems, backend services, databases, and AI modeling.
+          </p>
         </div>
 
-        <div className="techstack-grid">
-          
-          {/* Languages */}
-          <div className="tech-category">
-            <h3 className="category-title">
-              <Code2 size={20} /> Languages
-            </h3>
-            <div className="badge-container">
-              <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-              <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-              <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-              <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-              <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C" />
-              <img src="https://img.shields.io/badge/SQL-025E8C?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQL" />
-              <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-              <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-            </div>
-          </div>
+        <div className="tech-symmetric-grid">
+          {techCategories.map((category, index) => {
+            const Icon = category.icon;
+            return (
+              <div 
+                key={index} 
+                className="tech-category-card card-base animate-fade-in"
+              >
+                {/* Header */}
+                <div className="tech-card-header">
+                  <div 
+                    className="tech-icon-badge"
+                    style={{ backgroundColor: category.themeBg, color: category.themeColor, borderColor: `${category.themeColor}33` }}
+                  >
+                    <Icon size={22} />
+                  </div>
+                  <div>
+                    <h3 className="tech-category-title">{category.title}</h3>
+                    <p className="tech-category-sub">{category.subtitle}</p>
+                  </div>
+                </div>
 
-          {/* Frontend & Backend */}
-          <div className="tech-category">
-            <h3 className="category-title">
-              <Server size={20} /> Frontend & Backend
-            </h3>
-            <div className="badge-container">
-              <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-              <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-              <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-              <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
-              <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
-              <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot" />
-              <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-            </div>
-          </div>
-
-          {/* Databases, AI & ML */}
-          <div className="tech-category">
-            <h3 className="category-title">
-              <Database size={20} /> Databases, AI & ML
-            </h3>
-            <div className="badge-container">
-              <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-              <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-              <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn" />
-              <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
-              <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="Numpy" />
-              <img src="https://img.shields.io/badge/Hugging_Face-F8D521?style=for-the-badge&logo=hugging-face&logoColor=black" alt="Hugging Face" />
-            </div>
-          </div>
-
-          {/* Tools & Platforms */}
-          <div className="tech-category">
-            <h3 className="category-title">
-              <Settings2 size={20} /> Tools & Platforms
-            </h3>
-            <div className="badge-container">
-              <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-              <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-              <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS Code" />
-              <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-              <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
-              <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render" />
-            </div>
-          </div>
-
+                {/* Structured 2-Column Micro Grid of Skills */}
+                <div className="tech-skills-grid">
+                  {category.skills.map((skill, sIndex) => (
+                    <div key={sIndex} className="tech-skill-tile">
+                      <div className="tech-tile-left">
+                        <span 
+                          className="tech-tile-dot"
+                          style={{ backgroundColor: category.themeColor }}
+                        />
+                        <span className="tech-tile-name">{skill.name}</span>
+                      </div>
+                      {skill.badge && (
+                        <span 
+                          className="tech-tile-badge"
+                          style={{ color: category.themeColor, backgroundColor: category.themeBg }}
+                        >
+                          {skill.badge}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );

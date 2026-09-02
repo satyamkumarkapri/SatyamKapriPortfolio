@@ -1,0 +1,197 @@
+.what-i-build {
+  background-color: transparent;
+  position: relative;
+}
+
+.center-align {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-align .section-subtitle {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-12);
+}
+
+.build-card {
+  padding: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-2xl);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.build-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139, 92, 246, 0.08), transparent 45%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.build-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 25px rgba(139, 92, 246, 0.15);
+}
+
+.build-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Top: Icon and Category Badge */
+.build-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--spacing-5);
+  position: relative;
+  z-index: 1;
+}
+
+.build-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.build-card:hover .build-icon-wrapper {
+  transform: scale(1.1) rotate(4deg);
+}
+
+.build-category-badge {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid;
+  text-transform: uppercase;
+}
+
+/* Titles and Narrative */
+.build-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2);
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.01em;
+}
+
+.build-desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-5);
+  position: relative;
+  z-index: 1;
+}
+
+/* Detailed Highlights Checklist */
+.build-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--spacing-6);
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .build-highlights {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.build-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.build-check-icon {
+  min-width: 16px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.build-point-text {
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+/* Tags Footer */
+.build-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: var(--spacing-3);
+  position: relative;
+  z-index: 1;
+}
+
+.build-tag {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+[data-theme="light"] .build-tag {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+}
+
+.build-card:hover .build-tag {
+  color: var(--color-text);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Responsive Mobile */
+@media (max-width: 900px) {
+  .build-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .build-card {
+    padding: var(--spacing-6);
+  }
+}

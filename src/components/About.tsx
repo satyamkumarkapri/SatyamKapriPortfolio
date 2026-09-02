@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, MapPin, GraduationCap, Target, Briefcase } from 'lucide-react';
 import './About.css';
 
 const About: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const codeString = `const satyam = {
-    role: "B.Tech CSE Student",
-    university: "KL University",
-    graduating: 2029,
-    location: "India",
-    interests: ["Artificial Intelligence", "Machine Learning", "Full Stack Dev", "DSA"],
-    vision: "Blending engineering excellence with business leadership to build technology-driven ventures that create meaningful impact.",
-    funFact: "When I'm not coding in Java or Python, I'm dissecting business systems and simplifying complex problems!",
-    currentFocus: () => ["Applied ML", "System Design", "Shipping Projects"],
-    reachMe: "satyamkumarkapri17@gmail.com"
+  name: "Satyam Kumar Kapri",
+  origin: "Banka, Bihar, India",
+  education: {
+    degree: "B.Tech in Computer Science & Engineering",
+    university: "KL University, Guntur",
+    cgpa: "9.12 / 10.0"
+  },
+  technicalFocus: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Full-Stack Development",
+    "Data Structures & Algorithms"
+  ],
+  passion: "Where technical innovation meets business understanding",
+  longTermGoal: "MBA -> Build technology-driven ventures & scale business",
+  mindset: "Driven by curiosity. Engineering for meaningful impact."
 };`;
 
   const handleCopy = () => {
@@ -25,105 +32,116 @@ const About: React.FC = () => {
 
   const lines = [
     `<span class="token keyword">const</span> <span class="token variable">satyam</span> <span class="token operator">=</span> <span class="token punctuation">{</span>`,
-    `    <span class="token property">role</span><span class="token punctuation">:</span> <span class="token string">"B.Tech CSE Student"</span><span class="token punctuation">,</span>`,
+    `  <span class="token property">name</span><span class="token punctuation">:</span> <span class="token string">"Satyam Kumar Kapri"</span><span class="token punctuation">,</span>`,
+    `  <span class="token property">origin</span><span class="token punctuation">:</span> <span class="token string">"Banka, Bihar, India"</span><span class="token punctuation">,</span>`,
+    `  <span class="token property">education</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>`,
+    `    <span class="token property">degree</span><span class="token punctuation">:</span> <span class="token string">"B.Tech in CSE"</span><span class="token punctuation">,</span>`,
     `    <span class="token property">university</span><span class="token punctuation">:</span> <span class="token string">"KL University"</span><span class="token punctuation">,</span>`,
-    `    <span class="token property">graduating</span><span class="token punctuation">:</span> <span class="token number">2029</span><span class="token punctuation">,</span>`,
-    `    <span class="token property">location</span><span class="token punctuation">:</span> <span class="token string">"India"</span><span class="token punctuation">,</span>`,
-    `    <span class="token property">interests</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Artificial Intelligence"</span><span class="token punctuation">, </span><span class="token string">"Machine Learning"</span><span class="token punctuation">, </span><span class="token string">"Full Stack Dev"</span><span class="token punctuation">, </span><span class="token string">"DSA"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>`,
-    `    <span class="token property">vision</span><span class="token punctuation">:</span> <span class="token string">"Blending engineering excellence with business leadership to build</span>`,
-    `              <span class="token string">technology-driven ventures that create meaningful impact."</span><span class="token punctuation">,</span>`,
-    `    <span class="token property">funFact</span><span class="token punctuation">:</span> <span class="token string">"When I'm not coding in Java or Python, I'm dissecting business</span>`,
-    `               <span class="token string">systems and simplifying complex problems!"</span><span class="token punctuation">,</span>`,
-    `    <span class="token property">currentFocus</span><span class="token punctuation">:</span> <span class="token punctuation">()</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span><span class="token string">"Applied ML"</span><span class="token punctuation">, </span><span class="token string">"System Design"</span><span class="token punctuation">, </span><span class="token string">"Shipping Projects"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>`,
-    `    <span class="token property">reachMe</span><span class="token punctuation">:</span> <span class="token string">"satyamkumarkapri17@gmail.com"</span>`,
+    `    <span class="token property">cgpa</span><span class="token punctuation">:</span> <span class="token string">"9.12 / 10.0"</span>`,
+    `  <span class="token punctuation">}</span><span class="token punctuation">,</span>`,
+    `  <span class="token property">technicalFocus</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>`,
+    `    <span class="token string">"Artificial Intelligence"</span><span class="token punctuation">,</span>`,
+    `    <span class="token string">"Machine Learning"</span><span class="token punctuation">,</span>`,
+    `    <span class="token string">"Full-Stack Development"</span><span class="token punctuation">,</span>`,
+    `    <span class="token string">"Data Structures &amp; Algorithms"</span>`,
+    `  <span class="token punctuation">]</span><span class="token punctuation">,</span>`,
+    `  <span class="token property">passion</span><span class="token punctuation">:</span> <span class="token string">"Innovation + Business Strategy"</span><span class="token punctuation">,</span>`,
+    `  <span class="token property">longTermGoal</span><span class="token punctuation">:</span> <span class="token string">"MBA &amp; Tech-Driven Ventures"</span><span class="token punctuation">,</span>`,
+    `  <span class="token property">mindset</span><span class="token punctuation">:</span> <span class="token string">"Curiosity. Engineering. Impact."</span>`,
     `<span class="token punctuation">}</span><span class="token punctuation">;</span>`,
   ];
 
   return (
     <section id="about" className="about section-padding">
       <div className="container">
-        <h2 className="section-title about-title">
-          <span className="emoji-icon">⚡</span> About Me
-        </h2>
-        
-        <div className="about-quote">
-          <p>"I don't just want to learn technology. I want to understand how it can transform ideas, systems, and businesses."</p>
-        </div>
-        
-        <p className="about-description">
-          I'm a <strong>Computer Science &amp; Engineering</strong> student at <strong>KL University</strong>, driven by curiosity about how intelligent algorithms work, how robust software solves real problems, and where technical innovation meets business strategy.
-        </p>
+        <div className="about-grid">
+          
+          {/* Left Column: Authentic Bio */}
+          <div className="about-content animate-fade-in">
+            <div className="badge">ABOUT ME</div>
+            <h2 className="section-title">
+              Engineering with curiosity. Driven by impact and enterprise.
+            </h2>
 
-        {/* VS Code-style editor */}
-        <div className="code-editor">
-          {/* Title bar */}
-          <div className="editor-titlebar">
-            <div className="editor-dots">
-              <span className="dot dot-red" />
-              <span className="dot dot-yellow" />
-              <span className="dot dot-green" />
+            {/* Quick Facts Strip */}
+            <div className="about-quick-strip">
+              <div className="about-pill">
+                <MapPin size={14} className="about-pill-icon" />
+                <span>Banka, Bihar</span>
+              </div>
+              <div className="about-pill">
+                <GraduationCap size={14} className="about-pill-icon" />
+                <span>KL University · B.Tech CSE</span>
+              </div>
+              <div className="about-pill">
+                <Target size={14} className="about-pill-icon" />
+                <span>9.12 CGPA</span>
+              </div>
+              <div className="about-pill">
+                <Briefcase size={14} className="about-pill-icon" />
+                <span>Aspiring Tech Entrepreneur</span>
+              </div>
             </div>
-            <div className="editor-filename">
-              <span className="editor-icon">{'{ }'}</span>
-              satyam.js
+            
+            <div className="about-text">
+              <p>
+                My name is <strong>Satyam Kumar Kapri</strong>, originally from <strong>Banka, Bihar</strong>, and I am pursuing a Bachelor of Technology in Computer Science &amp; Engineering at <strong>KL University</strong>.
+              </p>
+              
+              <p>
+                My journey in technology is driven by relentless curiosity. I enjoy understanding how intelligent systems work under the hood, how software solves tangible real-world problems, and how bold ideas can be transformed into practical, scalable digital products.
+              </p>
+
+              <p>
+                My primary technical interests center on <strong>Artificial Intelligence, Machine Learning, Full-Stack Development, and Data Structures &amp; Algorithms</strong>. I continuously push my algorithmic limits as a 4★ competitive programmer while building production-grade full-stack architectures.
+              </p>
+
+              <p>
+                Beyond engineering, I possess a strong interest in <strong>business and entrepreneurship</strong>. I believe the most impactful breakthroughs emerge when cutting-edge technical innovation meets a deep understanding of business strategy and execution.
+              </p>
+
+              <p>
+                My long-term goal is to <strong>pursue an MBA</strong>, combine engineering rigor with business strategy, contribute to the growth and scaling of my family's businesses, and eventually build <strong>technology-driven ventures</strong> that create lasting, meaningful impact.
+              </p>
             </div>
-            <button className="copy-btn" onClick={handleCopy} aria-label="Copy code">
-              {copied ? <Check size={14} /> : <Copy size={14} />}
-              <span>{copied ? 'Copied!' : 'Copy'}</span>
-            </button>
           </div>
 
-          {/* Tab bar */}
-          <div className="editor-tabbar">
-            <div className="editor-tab active">satyam.js</div>
-          </div>
-
-          {/* Code area */}
-          <div className="editor-body">
-            <div className="line-numbers">
-              {lines.map((_, i) => (
-                <div key={i} className="line-num">{i + 1}</div>
-              ))}
+          {/* Right Column: Code Editor Visual */}
+          <div className="about-visual">
+            <div className="code-editor card-base">
+              <div className="editor-titlebar">
+                <div className="editor-dots">
+                  <span className="dot dot-red" />
+                  <span className="dot dot-yellow" />
+                  <span className="dot dot-green" />
+                </div>
+                <div className="editor-filename">satyam.config.ts</div>
+                <button className="copy-btn" onClick={handleCopy} aria-label="Copy code">
+                  {copied ? <Check size={14} /> : <Copy size={14} />}
+                </button>
+              </div>
+              <div className="editor-body">
+                <div className="line-numbers">
+                  {lines.map((_, i) => (
+                    <div key={i} className="line-num">{i + 1}</div>
+                  ))}
+                </div>
+                <pre className="code-block">
+                  <code>
+                    {lines.map((line, i) => (
+                      <div
+                        key={i}
+                        className="code-line"
+                        dangerouslySetInnerHTML={{ __html: line }}
+                      />
+                    ))}
+                  </code>
+                </pre>
+              </div>
             </div>
-            <pre className="code-block">
-              <code>
-                {lines.map((line, i) => (
-                  <div
-                    key={i}
-                    className="code-line"
-                    dangerouslySetInnerHTML={{ __html: line }}
-                  />
-                ))}
-              </code>
-            </pre>
           </div>
-
-          {/* Status bar */}
-          <div className="editor-statusbar">
-            <span>JavaScript</span>
-            <span>UTF-8</span>
-            <span>Ln {lines.length}, Col 2</span>
-          </div>
+          
         </div>
-
-        <div className="about-cards">
-          <div className="about-card glass">
-            <span className="emoji-icon">🔭</span>
-            <h3 className="card-title">Currently</h3>
-            <p className="card-desc">Building intelligent, resource-optimized systems</p>
-          </div>
-          <div className="about-card glass">
-            <span className="emoji-icon">🧠</span>
-            <h3 className="card-title">Learning</h3>
-            <p className="card-desc">Applied ML, system design &amp; cloud fundamentals</p>
-          </div>
-          <div className="about-card glass">
-            <span className="emoji-icon">🤝</span>
-            <h3 className="card-title">Collaborate</h3>
-            <p className="card-desc">AI/ML apps, full-stack platforms, DSA-driven design</p>
-          </div>
-        </div>
-
       </div>
     </section>
   );

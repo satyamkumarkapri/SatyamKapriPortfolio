@@ -1,132 +1,212 @@
 import React from 'react';
-import { Trophy, Award, Star, Code2, Medal, Zap } from 'lucide-react';
+import { Trophy, Award, Star, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap } from 'lucide-react';
 import './Achievements.css';
 
+interface ShowcaseItem {
+  id: number;
+  icon: React.ElementType;
+  title: string;
+  desc: string;
+  badgeBg: string;
+  iconColor: string;
+  linkUrl?: string;
+  linkLabel?: string;
+}
+
 const Achievements: React.FC = () => {
+  const compItems: ShowcaseItem[] = [
+    {
+      id: 1,
+      icon: Star,
+      title: '4★ CodeChef Programmer',
+      desc: 'Division 2. Highest rating 2128 — ranked #2196 globally and #1825 in India.',
+      badgeBg: 'rgba(245, 158, 11, 0.15)',
+      iconColor: '#F59E0B'
+    },
+    {
+      id: 2,
+      icon: Code2,
+      title: 'DSA Rating 1846',
+      desc: 'Highest rating 1904 — ranked #556 globally and #535 in India for algorithmic problem solving.',
+      badgeBg: 'rgba(139, 92, 246, 0.15)',
+      iconColor: '#8B5CF6'
+    },
+    {
+      id: 3,
+      icon: Medal,
+      title: 'Problem Solver Gold Badge',
+      desc: 'Successfully solved 640+ competitive programming problems.',
+      badgeBg: 'rgba(234, 179, 8, 0.15)',
+      iconColor: '#EAB308'
+    },
+    {
+      id: 4,
+      icon: Zap,
+      title: 'Adobe University Hackathon',
+      desc: 'Cleared Round 1 – Online Assessment (MCQ + Coding) of the Adobe University Hackathon, Aug 2026.',
+      badgeBg: 'rgba(239, 68, 68, 0.15)',
+      iconColor: '#EF4444',
+      linkUrl: '/assets/adobe_hackathon_certificate.pdf',
+      linkLabel: 'Certificate'
+    },
+    {
+      id: 5,
+      icon: Trophy,
+      title: 'RPA Club Member',
+      desc: 'Active member of the Robotic Process Automation (RPA) Club at KL University — exploring automation & AI workflows.',
+      badgeBg: 'rgba(59, 130, 246, 0.15)',
+      iconColor: '#3B82F6'
+    }
+  ];
+
+  const certItems: ShowcaseItem[] = [
+    {
+      id: 101,
+      icon: FileText,
+      title: 'Adobe & Unstop',
+      desc: 'Adobe University Hackathon — Official Certificate of Participation (Issued August 2026).',
+      badgeBg: 'rgba(239, 68, 68, 0.15)',
+      iconColor: '#EF4444',
+      linkUrl: '/assets/adobe_hackathon_certificate.pdf',
+      linkLabel: 'View PDF'
+    },
+    {
+      id: 102,
+      icon: Code,
+      title: 'CodeChef Certification',
+      desc: 'Certified in Java Programming & Algorithmic Problem Solving using Java.',
+      badgeBg: 'rgba(245, 158, 11, 0.15)',
+      iconColor: '#F59E0B'
+    },
+    {
+      id: 103,
+      icon: Flame,
+      title: 'freeCodeCamp',
+      desc: 'Certified in Frontend Development Libraries & Legacy Responsive Web Design.',
+      badgeBg: 'rgba(16, 185, 129, 0.15)',
+      iconColor: '#10B981'
+    },
+    {
+      id: 104,
+      icon: BookOpen,
+      title: 'Simplilearn',
+      desc: 'Python Django 101, Introduction to ASP.NET & Mathematics for Data Science.',
+      badgeBg: 'rgba(6, 182, 212, 0.15)',
+      iconColor: '#06B6D4'
+    },
+    {
+      id: 105,
+      icon: GraduationCap,
+      title: 'Cambridge Assessment',
+      desc: 'Linguaskill International English Language Proficiency Certification.',
+      badgeBg: 'rgba(139, 92, 246, 0.15)',
+      iconColor: '#8B5CF6'
+    }
+  ];
+
   return (
     <section id="achievements" className="achievements section-padding">
       <div className="container">
         
         <div className="section-header">
           <div>
-            <div className="badge">ACHIEVEMENTS</div>
-            <h2 className="section-title">Competitive Programming & Certifications</h2>
+            <div className="badge">RECOGNITION</div>
+            <h2 className="section-title">Achievements & Certifications</h2>
           </div>
         </div>
 
-        <div className="achievements-container">
-          
-          {/* Competitive Programming Column */}
-          <div className="achievement-column glass">
-            <div className="column-header">
-              <Trophy size={28} className="column-icon" />
-              <h3>Competitive Programming</h3>
+        <div className="achievements-symmetrical-grid">
+          {/* Left Column Card: Competitive Programming */}
+          <div className="showcase-card card-base">
+            <div className="showcase-card-header">
+              <div className="showcase-header-icon-wrap comp-icon-theme">
+                <Trophy size={24} />
+              </div>
+              <h3 className="showcase-card-title">Competitive Programming</h3>
             </div>
             
-            <div className="achievement-list">
-              <div className="achievement-item">
-                <div className="achievement-icon-wrapper star-wrapper">
-                  <Star size={20} />
-                </div>
-                <div className="achievement-details">
-                  <h4>4★ CodeChef Programmer</h4>
-                  <p>Division 2. Highest rating 2128 — ranked #2196 globally and #1825 in India.</p>
-                </div>
-              </div>
-              
-              <div className="achievement-item">
-                <div className="achievement-icon-wrapper">
-                  <Code2 size={20} />
-                </div>
-                <div className="achievement-details">
-                  <h4>DSA Rating 1846</h4>
-                  <p>Highest rating 1904 — ranked #556 globally and #535 in India for algorithmic problem solving.</p>
-                </div>
-              </div>
+            <div className="showcase-divider"></div>
 
-              <div className="achievement-item">
-                <div className="achievement-icon-wrapper gold-wrapper">
-                  <Medal size={20} />
-                </div>
-                <div className="achievement-details">
-                  <h4>Problem Solver Gold Badge</h4>
-                  <p>Successfully solved 640+ competitive programming problems.</p>
-                </div>
-              </div>
-
-              <div className="achievement-item">
-                <div className="achievement-icon-wrapper" style={{ background: 'linear-gradient(135deg, #FF0000, #FF6B6B)' }}>
-                  <Zap size={20} />
-                </div>
-                <div className="achievement-details">
-                  <h4>Adobe University Hackathon</h4>
-                  <p>Cleared Round 1 – Online Assessment (MCQ + Coding) of the Adobe University Hackathon, Aug 2026.</p>
-                </div>
-              </div>
-
-              <div className="achievement-item">
-                <div className="achievement-icon-wrapper" style={{ background: 'linear-gradient(135deg, #0ea5e9, #6366f1)' }}>
-                  <Trophy size={20} />
-                </div>
-                <div className="achievement-details">
-                  <h4>RPA Club Member</h4>
-                  <p>Active member of the Robotic Process Automation (RPA) Club at KL University — exploring automation, AI-driven workflows, and intelligent productivity tools.</p>
-                </div>
-              </div>
+            <div className="showcase-list">
+              {compItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.id} className="showcase-item">
+                    <div 
+                      className="showcase-icon-badge" 
+                      style={{ backgroundColor: item.badgeBg, color: item.iconColor }}
+                    >
+                      <Icon size={22} />
+                    </div>
+                    <div className="showcase-content">
+                      <div className="showcase-title-row">
+                        <h4 className="showcase-item-title">{item.title}</h4>
+                        {item.linkUrl && (
+                          <a 
+                            href={item.linkUrl} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="showcase-pill-link"
+                            title="View Official Certificate"
+                          >
+                            <ExternalLink size={12} /> {item.linkLabel || 'View'}
+                          </a>
+                        )}
+                      </div>
+                      <p className="showcase-item-desc">{item.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Certifications Column */}
-          <div className="achievement-column glass">
-            <div className="column-header">
-              <Award size={28} className="column-icon" />
-              <h3>Certifications</h3>
+          {/* Right Column Card: Certifications */}
+          <div className="showcase-card card-base">
+            <div className="showcase-card-header">
+              <div className="showcase-header-icon-wrap cert-icon-theme">
+                <Award size={24} />
+              </div>
+              <h3 className="showcase-card-title">Certifications & Credentials</h3>
             </div>
             
-            <div className="cert-list">
-              <div className="cert-item">
-                <h4>Adobe</h4>
-                <ul>
-                  <li>Adobe University Hackathon – Round 1 Qualifier (Aug 2026)</li>
-                </ul>
-              </div>
+            <div className="showcase-divider"></div>
 
-              <div className="cert-item">
-                <h4>CodeChef</h4>
-                <ul>
-                  <li>Java Programming</li>
-                  <li>Algorithmic Problem Solving Using Java</li>
-                </ul>
-              </div>
-              
-              <div className="cert-item">
-                <h4>freeCodeCamp</h4>
-                <ul>
-                  <li>Frontend Development Libraries</li>
-                  <li>Legacy Responsive Web Design</li>
-                </ul>
-              </div>
-
-              <div className="cert-item">
-                <h4>Simplilearn</h4>
-                <ul>
-                  <li>Python Django 101</li>
-                  <li>Introduction to ASP.NET</li>
-                  <li>Mathematics for Data Science</li>
-                </ul>
-              </div>
-
-              <div className="cert-item">
-                <h4>Cambridge</h4>
-                <ul>
-                  <li>Linguaskill Certification</li>
-                </ul>
-              </div>
+            <div className="showcase-list">
+              {certItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.id} className="showcase-item">
+                    <div 
+                      className="showcase-icon-badge" 
+                      style={{ backgroundColor: item.badgeBg, color: item.iconColor }}
+                    >
+                      <Icon size={22} />
+                    </div>
+                    <div className="showcase-content">
+                      <div className="showcase-title-row">
+                        <h4 className="showcase-item-title">{item.title}</h4>
+                        {item.linkUrl && (
+                          <a 
+                            href={item.linkUrl} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="showcase-pill-link cert-pill-accent"
+                            title="View Official Certificate"
+                          >
+                            <ExternalLink size={12} /> {item.linkLabel || 'View'}
+                          </a>
+                        )}
+                      </div>
+                      <p className="showcase-item-desc">{item.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-
         </div>
-        
+
       </div>
     </section>
   );

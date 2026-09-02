@@ -1,68 +1,151 @@
 .techstack {
-  background-color: var(--color-bg);
-  padding-bottom: var(--spacing-20);
+  background-color: transparent;
 }
 
-.techstack-header {
+/* Symmetrical 3-Column Grid */
+.tech-symmetric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-12);
+  align-items: stretch;
+}
+
+.tech-category-card {
+  padding: var(--spacing-6) var(--spacing-6);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-fast);
+  height: 100%;
+}
+
+.tech-category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25), 0 0 20px rgba(139, 92, 246, 0.12);
+}
+
+/* Card Header */
+.tech-card-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-4);
-  margin-bottom: var(--spacing-12);
+  gap: 14px;
+  margin-bottom: var(--spacing-5);
+  padding-bottom: var(--spacing-4);
   border-bottom: 1px solid var(--color-border);
-  padding-bottom: var(--spacing-6);
 }
 
-.techstack-icon {
-  color: var(--color-primary);
-}
-
-.techstack-header .section-title {
-  margin-bottom: 0;
-  font-size: 2.2rem;
-}
-
-.techstack-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-10);
-}
-
-.tech-category {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-4);
-}
-
-.category-title {
+.tech-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid;
   display: flex;
   align-items: center;
-  gap: var(--spacing-3);
-  font-size: 1.3rem;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tech-category-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--color-text);
-  font-weight: 600;
+  margin: 0 0 2px 0;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
-.badge-container {
+.tech-category-sub {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Full-Width Stack inside each card - Zero Truncation / No Cutoffs */
+.tech-skills-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.tech-skill-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
 }
 
-.badge-container img {
+[data-theme="light"] .tech-skill-tile {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+}
+
+.tech-skill-tile:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(139, 92, 246, 0.35);
+  transform: translateX(4px);
+}
+
+[data-theme="light"] .tech-skill-tile:hover {
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tech-tile-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.tech-tile-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tech-tile-name {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.tech-tile-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
   border-radius: 4px;
-  height: 28px;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.badge-container img:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+/* Responsive Rules */
+@media (max-width: 1140px) {
+  .tech-symmetric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-6);
+  }
 }
 
-@media (max-width: 768px) {
-  .techstack-header {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 680px) {
+  .tech-symmetric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-category-card {
+    padding: var(--spacing-5);
   }
 }

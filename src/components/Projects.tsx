@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { ExternalLink, ArrowRight, X, FolderGit2, Star, GitFork } from 'lucide-react';
+import { ExternalLink, X, FolderGit2, Star, GitFork } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
+import './Projects.css';
 
 interface GithubRepo {
   id: number;
@@ -11,35 +13,37 @@ interface GithubRepo {
   forks_count: number;
   updated_at: string;
 }
-import './Projects.css';
 
 const projects = [
   {
     id: 1,
     title: 'HealthNet',
     category: 'Healthcare Management System',
-    description: 'A comprehensive hospital management platform with patient records, appointments, and billing.',
-    tags: ['React', 'Node.js', 'MongoDB'],
+    description: 'A comprehensive hospital management platform with patient records, appointments, and billing. Engineered for high availability and secure data handling.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express'],
     image: '/assets/project1.png',
-    link: 'https://github.com/satyamkumarkapri/HealthNet'
+    link: 'https://github.com/satyamkumarkapri/HealthNet',
+    featured: true
   },
   {
     id: 2,
     title: 'HealthNet Intelligent System',
-    category: 'Java, OOP, Data Structures',
+    category: 'Backend Architecture',
     description: 'An intelligent healthcare backend using OOP principles and advanced data structures for efficient data management.',
     tags: ['Java', 'OOP', 'DSA'],
     image: '/assets/project2.png',
-    link: 'https://github.com/satyamkumarkapri/PhonePeProjectPBL'
+    link: 'https://github.com/satyamkumarkapri/HealthNet',
+    featured: false
   },
   {
     id: 3,
     title: 'PhonePe Payment System',
-    category: 'Java',
-    description: 'A simulated digital payments system modelled on PhonePe, built with core Java and object-oriented design.',
+    category: 'System Design',
+    description: 'A simulated digital payments system modelled on PhonePe, built with core Java and object-oriented design patterns.',
     tags: ['Java', 'OOP', 'System Design'],
     image: '/assets/project3.png',
-    link: 'https://github.com/satyamkumarkapri/Resource_Booking_Project'
+    link: 'https://github.com/satyamkumarkapri/PhonePeProjectPBL',
+    featured: false
   }
 ];
 
@@ -77,45 +81,86 @@ const Projects: React.FC = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const featuredProject = projects.find(p => p.featured) || projects[0];
+  const otherProjects = projects.filter(p => !p.featured || p.id !== featuredProject.id);
+
   return (
     <section id="projects" className="projects section-padding">
       <div className="container">
         
-        <div className="section-header">
+        <div className="section-header project-header">
           <div>
-            <div className="badge">FEATURED PROJECTS</div>
+            <div className="badge">PORTFOLIO</div>
             <h2 className="section-title">Selected Work</h2>
           </div>
-          <a href="#" className="view-all" onClick={openModal}>
-            VIEW ALL PROJECTS <ArrowRight size={16} />
-          </a>
+          <button className="btn btn-outline" onClick={openModal}>
+            <FaGithub size={16} /> View All GitHub Repos
+          </button>
         </div>
 
+        {/* Featured Project */}
+        <div 
+          className="featured-project card-base"
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+            e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+          }}
+        >
+          <div className="featured-image">
+            <img src={featuredProject.image} alt={featuredProject.title} loading="lazy" />
+          </div>
+          <div className="featured-content">
+            <div className="badge featured-badge">FEATURED</div>
+            <h3 className="featured-title">{featuredProject.title}</h3>
+            <p className="featured-category">{featuredProject.category}</p>
+            <p className="featured-desc">{featuredProject.description}</p>
+            <div className="project-tags">
+              {featuredProject.tags.map(tag => (
+                <span key={tag} className="project-tag">{tag}</span>
+              ))}
+            </div>
+            <div className="project-actions mt-6" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <a href={featuredProject.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Live Demo <ExternalLink size={16} />
+              </a>
+              <a href={featuredProject.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                Source Code <FaGithub size={16} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Other Projects Grid */}
         <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card glass">
+          {otherProjects.map((project, index) => (
+            <div 
+              key={project.id} 
+              className="project-card card-base animate-fade-in"
+              style={{ animationDelay: `${index * 0.15}s` }}
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+              }}
+            >
               <div className="project-image-wrapper">
-                <img src={project.image} alt={project.title} className="project-image" />
+                <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
                 <div className="project-overlay">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="overlay-link">
-                    <ExternalLink size={20} /> View Project
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="overlay-link btn btn-primary">
+                    <ExternalLink size={16} /> View Code
                   </a>
                 </div>
               </div>
               <div className="project-info">
-                <div className="project-meta">
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-category">{project.category}</p>
-                  <p className="project-description">{project.description}</p>
-                  <div className="project-tags">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="project-tag">{tag}</span>
-                    ))}
-                  </div>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-category">{project.category}</p>
+                <p className="project-description">{project.description}</p>
+                <div className="project-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="project-tag">{tag}</span>
+                  ))}
                 </div>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                  <ExternalLink size={20} />
-                </a>
               </div>
             </div>
           ))}
@@ -129,7 +174,7 @@ const Projects: React.FC = () => {
           <div className="projects-modal-content" onClick={e => e.stopPropagation()}>
             <div className="modal-header">
               <div className="modal-title">
-                <FolderGit2 size={24} />
+                <FolderGit2 size={24} className="text-primary" />
                 <h2>All GitHub Repositories</h2>
               </div>
               <button className="modal-close" onClick={closeModal}>
@@ -138,13 +183,18 @@ const Projects: React.FC = () => {
             </div>
             
             <div className="modal-body">
-              {loading && <div className="modal-loading">Loading projects from GitHub...</div>}
-              {error && <div className="modal-error">{error}</div>}
+              {loading && (
+                <div className="modal-state">
+                  <div className="spinner"></div>
+                  <p>Loading repositories...</p>
+                </div>
+              )}
+              {error && <div className="modal-state error">{error}</div>}
               
               {!loading && !error && (
                 <div className="github-repos-grid">
                   {githubRepos.map(repo => (
-                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" key={repo.id} className="github-repo-card">
+                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" key={repo.id} className="github-repo-card card-base">
                       <div className="repo-header">
                         <FolderGit2 className="repo-icon" size={20} />
                         <ExternalLink className="repo-link-icon" size={16} />

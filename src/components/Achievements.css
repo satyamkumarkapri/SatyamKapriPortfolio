@@ -1,126 +1,171 @@
 .achievements {
-  background-color: var(--color-surface);
+  background-color: transparent;
 }
 
-.achievements-container {
+/* Symmetrical 2-Column Grid */
+.achievements-symmetrical-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-8);
+  align-items: stretch;
 }
 
-.achievement-column {
-  border-radius: var(--radius-xl);
+/* Unified Showcase Card Style */
+.showcase-card {
   padding: var(--spacing-8);
-  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.column-header {
+.showcase-card-header {
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
-  margin-bottom: var(--spacing-8);
-  padding-bottom: var(--spacing-4);
-  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-5);
 }
 
-.column-icon {
+.showcase-header-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comp-icon-theme {
   color: var(--color-primary);
 }
 
-.column-header h3 {
-  font-size: 1.5rem;
-  margin: 0;
+.cert-icon-theme {
+  color: #06B6D4;
 }
 
-/* CP List */
-.achievement-list {
+.showcase-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.showcase-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin-bottom: var(--spacing-6);
+}
+
+.showcase-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-6);
+  flex: 1;
+  justify-content: space-between;
 }
 
-.achievement-item {
+.showcase-item {
   display: flex;
-  gap: var(--spacing-4);
   align-items: flex-start;
+  gap: var(--spacing-4);
+  transition: transform var(--transition-fast);
 }
 
-.achievement-icon-wrapper {
+.showcase-item:hover {
+  transform: translateX(4px);
+}
+
+.showcase-icon-badge {
   width: 48px;
   height: 48px;
-  border-radius: var(--radius-lg);
-  background-color: var(--color-primary-soft);
-  color: var(--color-primary);
+  min-width: 48px;
+  border-radius: 14px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-shrink: 0;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.star-wrapper {
-  background-color: rgba(234, 179, 8, 0.15);
-  color: #EAB308; /* Yellow/Gold for stars */
+.showcase-content {
+  flex: 1;
 }
 
-.gold-wrapper {
-  background-color: rgba(245, 158, 11, 0.15);
-  color: #F59E0B; /* Orange/Gold for badge */
-}
-
-.achievement-details h4 {
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-1);
-  color: var(--color-text);
-}
-
-.achievement-details p {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.5;
-}
-
-/* Certifications */
-.cert-list {
+.showcase-title-row {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-5);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+  margin-bottom: 4px;
+  flex-wrap: wrap;
 }
 
-.cert-item {
-  border-left: 3px solid var(--color-primary);
-  padding-left: var(--spacing-4);
-}
-
-.cert-item h4 {
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-2);
+.showcase-item-title {
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--color-text);
+  margin: 0;
+  line-height: 1.35;
 }
 
-.cert-item ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-}
-
-.cert-item li {
-  font-size: 0.95rem;
+.showcase-item-desc {
+  font-size: 0.92rem;
   color: var(--color-text-muted);
-  position: relative;
-  padding-left: var(--spacing-3);
+  line-height: 1.55;
+  margin: 0;
 }
 
-.cert-item li::before {
-  content: "•";
-  color: var(--color-primary);
-  position: absolute;
-  left: 0;
-  top: 0;
+/* Certificate Pill Link */
+.showcase-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #EF4444;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
 }
 
+.showcase-pill-link:hover {
+  background: #EF4444;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.cert-pill-accent {
+  background: rgba(6, 182, 212, 0.12);
+  border-color: rgba(6, 182, 212, 0.3);
+  color: #06B6D4;
+}
+
+.cert-pill-accent:hover {
+  background: #06B6D4;
+  color: #FFFFFF;
+}
+
+/* Responsive Breakpoints */
 @media (max-width: 992px) {
-  .achievements-container {
+  .achievements-symmetrical-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase-card {
+    padding: var(--spacing-6);
+  }
+
+  .showcase-icon-badge {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+  
+  .showcase-card-title {
+    font-size: 1.25rem;
   }
 }
