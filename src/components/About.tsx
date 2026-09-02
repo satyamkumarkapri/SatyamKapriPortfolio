@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Check, Circle } from 'lucide-react';
+import { Copy, Check } from 'lucide-react';
 import './About.css';
 
 const About: React.FC = () => {
