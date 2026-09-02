@@ -70,6 +70,7 @@ body {
   color: var(--color-text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -96,6 +97,12 @@ button {
   max-width: 1580px;
   margin: 0 auto;
   padding: 0 var(--spacing-6);
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 var(--spacing-4);
+  }
 }
 
 .text-gradient {
