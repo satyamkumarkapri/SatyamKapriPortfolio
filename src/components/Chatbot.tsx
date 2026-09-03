@@ -105,7 +105,7 @@ const Chatbot: React.FC = () => {
     // Contact & Hire
     if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('phone') || q.includes('reach') || q.includes('job') || q.includes('internship') || q.includes('call')) {
       return {
-        text: "Satyam is actively open to Software Engineering roles, AI/ML opportunities, internships, and collaborative projects!\n\n📬 Direct Contact:\n• Email: satyamkumarkapri17@gmail.com\n• Phone: +91 7061171017\n• Location: Bihar, India\n• LinkedIn: linkedin.com/in/satyamkumarkapri\n• GitHub: github.com/satyamkumarkapri",
+        text: "Satyam is actively open to Software Engineering roles, AI/ML opportunities, internships, and collaborative projects!\n\n📬 Direct Contact:\n• Email: satyamkumarkapri17@gmail.com\n• Phone: +91 7061****17\n• Location: Bihar, India\n• LinkedIn: linkedin.com/in/satyamkumarkapri\n• GitHub: github.com/satyamkumarkapri",
         links: [
           { label: 'Open Contact Form', url: '#contact' },
           { label: 'LinkedIn Profile', url: 'https://linkedin.com/in/satyamkumarkapri' }

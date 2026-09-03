@@ -35,7 +35,7 @@ const TerminalWidget: React.FC = () => {
         output = '• HealthNet (Hospital Management Platform)\n• PhonePe Payment System (System Design & OOP)\n• Intelligent Healthcare Backend';
         break;
       case 'contact':
-        output = 'Email: satyamkumarkapri17@gmail.com | Phone: +91 7061171017 | GitHub: github.com/satyamkumarkapri';
+        output = 'Email: satyamkumarkapri17@gmail.com | Phone: +91 7061****17 | GitHub: github.com/satyamkumarkapri';
         break;
       case 'clear':
         setTerminalHistory([]);

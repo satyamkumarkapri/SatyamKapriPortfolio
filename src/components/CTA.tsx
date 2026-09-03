@@ -32,7 +32,7 @@ const CTA: React.FC = () => {
                 </div>
                 <div>
                   <div className="contact-label">Phone</div>
-                  <a href="tel:+917061171017" className="contact-link">+91 7061171017</a>
+                  <a href="tel:+917061171017" className="contact-link">+91 7061****17</a>
                 </div>
               </div>
               
