@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           <div className="badge hero-badge">👋 HELLO, I'M</div>
           <h1 className="hero-title">
             <span className="hero-name">Satyam Kumar Kapri</span> <br />
-            <span className="hero-role">Full-Stack Software Engineer</span> <br />
+            <span className="hero-role">Full-Stack Developer | AI & ML Enthusiast</span> <br />
             <span className="text-gradient hero-highlight">AI, ML & Software Development</span>
           </h1>
           <p className="hero-subtitle">

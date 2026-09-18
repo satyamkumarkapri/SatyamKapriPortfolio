@@ -23,7 +23,7 @@ const TerminalWidget: React.FC = () => {
         output = 'Available commands: about, skills, education, projects, contact, clear, exit';
         break;
       case 'about':
-        output = 'Satyam Kumar Kapri — Full-Stack Software Engineer & AI/ML developer pursuing B.Tech CSE at KL University (CGPA 9.12).';
+        output = 'Satyam Kumar Kapri — Full-Stack Developer | AI & ML Enthusiast pursuing B.Tech CSE at KL University (CGPA 9.12).';
         break;
       case 'skills':
         output = 'Languages: Java, Python, JavaScript, TypeScript, C, SQL | Stack: React, Node.js, FastAPI, MongoDB | CP: 4★ CodeChef (2128)';
