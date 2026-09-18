@@ -22,17 +22,19 @@ const projects = [
     description: 'A comprehensive hospital management platform with patient records, appointments, and billing. Engineered for high availability and secure data handling.',
     tags: ['React', 'Node.js', 'MongoDB', 'Express'],
     image: '/assets/project1.png',
-    link: 'https://github.com/satyamkumarkapri/HealthNet',
+    githubUrl: 'https://github.com/satyamkumarkapri/HealthNet',
+    demoUrl: '',
     featured: true
   },
   {
     id: 2,
-    title: 'HealthNet Intelligent System',
-    category: 'Backend Architecture',
-    description: 'An intelligent healthcare backend using OOP principles and advanced data structures for efficient data management.',
-    tags: ['Java', 'OOP', 'DSA'],
-    image: '/assets/project2.png',
-    link: 'https://github.com/satyamkumarkapri/HealthNet',
+    title: 'Hospital Navigation System',
+    category: 'Navigation & Pathfinding',
+    description: 'An application designed to help patients and staff navigate through complex hospital layouts efficiently.',
+    tags: ['Java', 'Algorithms', 'DSA'],
+    image: '/assets/hospital_nav.png',
+    githubUrl: 'https://github.com/satyamkumarkapri/HospitalNavigationSystem',
+    demoUrl: 'https://hospitalnavigationsystem.onrender.com',
     featured: false
   },
   {
@@ -42,7 +44,64 @@ const projects = [
     description: 'A simulated digital payments system modelled on PhonePe, built with core Java and object-oriented design patterns.',
     tags: ['Java', 'OOP', 'System Design'],
     image: '/assets/project3.png',
-    link: 'https://github.com/satyamkumarkapri/PhonePeProjectPBL',
+    githubUrl: 'https://github.com/satyamkumarkapri/PhonePeProjectPBL',
+    demoUrl: '',
+    featured: false
+  },
+  {
+    id: 4,
+    title: 'Skill Track (SIH)',
+    category: 'Full Stack Development',
+    description: 'A platform developed for Smart India Hackathon to track and manage skills effectively.',
+    tags: ['TypeScript', 'React', 'Node.js'],
+    image: '/assets/skilltrack.png',
+    githubUrl: 'https://github.com/satyamkumarkapri/Skill_Track_Sih',
+    demoUrl: 'https://skilltrackmaharashtra.vercel.app',
+    featured: false
+  },
+  {
+    id: 6,
+    title: 'Product Catalog',
+    category: 'Backend Development',
+    description: 'A robust product catalog management system built with Java.',
+    tags: ['Java', 'Backend'],
+    image: '/assets/project3.png',
+    githubUrl: 'https://github.com/satyamkumarkapri/Product_Catalog',
+    demoUrl: '',
+    featured: false
+  },
+  {
+    id: 7,
+    title: 'Placements Prediction',
+    category: 'Machine Learning',
+    description: 'A machine learning model to predict student placement outcomes based on academic and extracurricular data.',
+    tags: ['Python', 'HTML', 'Machine Learning'],
+    image: '/assets/project1.png',
+    githubUrl: 'https://github.com/satyamkumarkapri/Placements_Prediction',
+    demoUrl: '',
+    featured: false
+  },
+  
+  {
+    id: 10,
+    title: 'COVID-19 Data Analysis',
+    category: 'Data Science & Machine Learning',
+    description: 'A fully responsive, interactive AI/Data Science dashboard for visualizing global pandemic data using Machine Learning and advanced charting.',
+    tags: ['Python', 'Machine Learning', 'Data Analysis', 'Hugging Face'],
+    image: '/assets/covid19.png',
+    githubUrl: 'https://github.com/satyamkumarkapri/Covid-19-Data-Analysis',
+    demoUrl: 'https://huggingface.co/spaces/satyamkumarkapri/Covid-19DataAnalysis',
+    featured: false
+  },
+  {
+    id: 11,
+    title: 'Kishan Traders',
+    category: 'Business & Corporate',
+    description: "A modern, responsive business website for Bihar's most trusted wholesale supplier of iron, steel, and building materials.",
+    tags: ['React', 'Web Development', 'Business'],
+    image: '/assets/kishan_traders.png',
+    githubUrl: '',
+    demoUrl: 'https://kishan-traders.vercel.app/',
     featured: false
   }
 ];
@@ -108,7 +167,13 @@ const Projects: React.FC = () => {
           }}
         >
           <div className="featured-image">
-            <img src={featuredProject.image} alt={featuredProject.title} loading="lazy" />
+            {featuredProject.image === '/assets/hospital_nav.png' || featuredProject.image === '/assets/covid19.png' || featuredProject.image === '/assets/skilltrack.png' || featuredProject.image === '/assets/kishan_traders.png' ? (
+              <img src={featuredProject.image} alt={featuredProject.title} loading="lazy" />
+            ) : (
+              <div className="image-coming-soon">
+                <span>Image Coming Soon</span>
+              </div>
+            )}
           </div>
           <div className="featured-content">
             <div className="badge featured-badge">FEATURED</div>
@@ -121,12 +186,16 @@ const Projects: React.FC = () => {
               ))}
             </div>
             <div className="project-actions mt-6" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href={featuredProject.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Live Demo <ExternalLink size={16} />
-              </a>
-              <a href={featuredProject.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                Source Code <FaGithub size={16} />
-              </a>
+              {featuredProject.demoUrl && (
+                <a href={featuredProject.demoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                  Live Demo <ExternalLink size={16} />
+                </a>
+              )}
+              {featuredProject.githubUrl && (
+                <a href={featuredProject.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                  Source Code <FaGithub size={16} />
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -145,12 +214,13 @@ const Projects: React.FC = () => {
               }}
             >
               <div className="project-image-wrapper">
-                <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
-                <div className="project-overlay">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="overlay-link btn btn-primary">
-                    <ExternalLink size={16} /> View Code
-                  </a>
-                </div>
+                {project.image === '/assets/hospital_nav.png' || project.image === '/assets/covid19.png' || project.image === '/assets/skilltrack.png' || project.image === '/assets/kishan_traders.png' ? (
+                  <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
+                ) : (
+                  <div className="image-coming-soon">
+                    <span>Image Coming Soon</span>
+                  </div>
+                )}
               </div>
               <div className="project-info">
                 <h3 className="project-title">{project.title}</h3>
@@ -160,6 +230,18 @@ const Projects: React.FC = () => {
                   {project.tags.map((tag) => (
                     <span key={tag} className="project-tag">{tag}</span>
                   ))}
+                </div>
+                <div className="project-actions mt-4" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: 'auto', paddingTop: '16px' }}>
+                  {project.demoUrl && (
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>
+                      <ExternalLink size={14} /> Demo
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>
+                      <FaGithub size={14} /> Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
