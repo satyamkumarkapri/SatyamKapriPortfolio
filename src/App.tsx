@@ -19,10 +19,13 @@ const Chatbot = React.lazy(() => import('./components/Chatbot'));
 const TerminalWidget = React.lazy(() => import('./components/TerminalWidget'));
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
