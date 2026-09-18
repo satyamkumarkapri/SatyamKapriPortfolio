@@ -10,8 +10,8 @@ const CTA: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const formData = new FormData(e.currentTarget);
-
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -26,7 +26,7 @@ const CTA: React.FC = () => {
       
       if (data.success) {
         setIsSuccess(true);
-        e.currentTarget.reset();
+        form.reset();
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
         alert('Something went wrong. Please try again.');
