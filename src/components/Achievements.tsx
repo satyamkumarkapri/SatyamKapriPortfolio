@@ -20,15 +20,15 @@ const Achievements: React.FC = () => {
       id: 1,
       icon: Star,
       title: '4★ CodeChef Programmer',
-      desc: 'Division 2. Highest rating 2128 — ranked #2196 globally and #1825 in India.',
+      desc: 'Division 2. Highest rating 2128 — ranked #3556 globally and #3112 in India.',
       badgeBg: 'rgba(245, 158, 11, 0.15)',
       iconColor: '#F59E0B'
     },
     {
       id: 2,
       icon: Code2,
-      title: 'DSA Rating 1846',
-      desc: 'Highest rating 1904 — ranked #556 globally and #535 in India for algorithmic problem solving.',
+      title: 'DSA Rating 1901',
+      desc: 'Highest rating 1904 — ranked #445 globally and #422 in India for algorithmic problem solving.',
       badgeBg: 'rgba(139, 92, 246, 0.15)',
       iconColor: '#8B5CF6'
     },

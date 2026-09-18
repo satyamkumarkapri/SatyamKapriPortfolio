@@ -95,7 +95,7 @@ const Chatbot: React.FC = () => {
     // Competitive Programming / Achievements
     if (q.includes('codechef') || q.includes('dsa') || q.includes('competitive') || q.includes('rating') || q.includes('hackathon') || q.includes('achievement') || q.includes('rpa') || q.includes('adobe')) {
       return {
-        text: "Satyam is an active competitive programmer with proven problem-solving credentials:\n\n⭐ 4★ CodeChef Programmer (Div 2) — Max Rating: 2128 (Ranked #2196 globally, #1825 in India)\n🧩 DSA Rating 1846 — Max Rating: 1904 (Ranked #556 globally, #535 in India)\n🏅 Problem Solver Gold Badge — 640+ problems solved across CP platforms\n⚡ Adobe University Hackathon — Cleared Round 1 Online Assessment (MCQ + Coding) in Aug 2026\n🤖 RPA Club Member — Active contributor to automation & AI-driven productivity tools at KL University",
+        text: "Satyam is an active competitive programmer with proven problem-solving credentials:\n\n⭐ 4★ CodeChef Programmer (Div 2) — Max Rating: 2128 (Ranked #3556 globally, #3112 in India)\n🧩 DSA Rating 1901 — Max Rating: 1904 (Ranked #445 globally, #422 in India)\n🏅 Problem Solver Gold Badge — 640+ problems solved across CP platforms\n⚡ Adobe University Hackathon — Cleared Round 1 Online Assessment (MCQ + Coding) in Aug 2026\n🤖 RPA Club Member — Active contributor to automation & AI-driven productivity tools at KL University",
         links: [
           { label: 'View Recognition Card', url: '#achievements' }
         ]
