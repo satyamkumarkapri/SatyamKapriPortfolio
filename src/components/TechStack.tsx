@@ -125,18 +125,29 @@ const TechStack: React.FC = () => {
         <div className="tech-symmetric-grid">
           {techCategories.map((category, index) => {
             const Icon = category.icon;
+            
+            const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+              e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+            };
+
             return (
               <div 
                 key={index} 
-                className="tech-category-card card-base animate-fade-in"
+                className="tech-category-card card-base"
+                onMouseMove={handleMouseMove}
+                style={{ '--animation-order': index } as React.CSSProperties}
               >
                 {/* Header */}
                 <div className="tech-card-header">
                   <div 
                     className="tech-icon-badge"
-                    style={{ backgroundColor: category.themeBg, color: category.themeColor, borderColor: `${category.themeColor}33` }}
+                    style={{ backgroundColor: category.themeBg, color: category.themeColor, borderColor: `${category.themeColor}33`, boxShadow: `0 0 20px ${category.themeColor}20` }}
                   >
-                    <Icon size={22} />
+                    <Icon size={24} />
                   </div>
                   <div>
                     <h3 className="tech-category-title">{category.title}</h3>
@@ -147,18 +158,22 @@ const TechStack: React.FC = () => {
                 {/* Structured 2-Column Micro Grid of Skills */}
                 <div className="tech-skills-grid">
                   {category.skills.map((skill, sIndex) => (
-                    <div key={sIndex} className="tech-skill-tile">
+                    <div 
+                      key={sIndex} 
+                      className="tech-skill-tile"
+                      style={{ '--tile-delay': sIndex } as React.CSSProperties}
+                    >
                       <div className="tech-tile-left">
                         <span 
                           className="tech-tile-dot"
-                          style={{ backgroundColor: category.themeColor }}
+                          style={{ backgroundColor: category.themeColor, boxShadow: `0 0 10px ${category.themeColor}` }}
                         />
                         <span className="tech-tile-name">{skill.name}</span>
                       </div>
                       {skill.badge && (
                         <span 
                           className="tech-tile-badge"
-                          style={{ color: category.themeColor, backgroundColor: category.themeBg }}
+                          style={{ color: category.themeColor, backgroundColor: category.themeBg, border: `1px solid ${category.themeColor}20` }}
                         >
                           {skill.badge}
                         </span>

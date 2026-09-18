@@ -197,6 +197,16 @@
   transform: translateY(-2px);
 }
 
+a.ach-item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.ach-item:hover .ach-title {
+  color: var(--color-primary);
+}
+
 .ach-icon {
   color: var(--color-primary);
 }

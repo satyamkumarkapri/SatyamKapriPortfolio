@@ -12,18 +12,63 @@
 }
 
 .tech-category-card {
-  padding: var(--spacing-6) var(--spacing-6);
+  padding: var(--spacing-6);
   border-radius: var(--radius-2xl);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all var(--transition-fast);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1;
+  animation: slideUpFade 0.6s ease forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[data-theme="light"] .tech-category-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tech-category-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+[data-theme="light"] .tech-category-card::before {
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(0, 0, 0, 0.03), transparent 40%);
+}
+
+.tech-category-card:hover::before {
+  opacity: 1;
 }
 
 .tech-category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25), 0 0 20px rgba(139, 92, 246, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .tech-category-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Card Header */
@@ -78,11 +123,43 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  transition: all var(--transition-fast);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: tileEnter 0.5s ease forwards;
+  animation-delay: calc((var(--animation-order) * 0.1s) + (var(--tile-delay) * 0.05s) + 0.2s);
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+@keyframes tileEnter {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tech-skill-tile::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+[data-theme="light"] .tech-skill-tile::after {
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.02), transparent);
+}
+
+.tech-skill-tile:hover::after {
+  left: 100%;
 }
 
 [data-theme="light"] .tech-skill-tile {
@@ -91,14 +168,16 @@
 }
 
 .tech-skill-tile:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(139, 92, 246, 0.35);
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(6px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 [data-theme="light"] .tech-skill-tile:hover {
   background: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .tech-tile-left {

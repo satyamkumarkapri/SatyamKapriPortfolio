@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trophy, Award, Star, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap } from 'lucide-react';
+import { SiHackerrank } from 'react-icons/si';
 import './Achievements.css';
 
 interface ShowcaseItem {
@@ -60,6 +61,16 @@ const Achievements: React.FC = () => {
   ];
 
   const certItems: ShowcaseItem[] = [
+    {
+      id: 106,
+      icon: SiHackerrank,
+      title: 'HackerRank Certification',
+      desc: 'Problem Solving (Intermediate) Certificate of Accomplishment (ID: BC5F3B0F81BC).',
+      badgeBg: 'rgba(34, 197, 94, 0.15)',
+      iconColor: '#22C55E',
+      linkUrl: 'https://www.hackerrank.com/certificates/BC5F3B0F81BC',
+      linkLabel: 'View Credential'
+    },
     {
       id: 101,
       icon: FileText,

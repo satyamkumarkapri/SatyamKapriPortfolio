@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaInstagram, FaGithub, FaLinkedin, FaArrowUp } from 'react-icons/fa';
+import { FaInstagram, FaGithub, FaLinkedin, FaArrowUp, FaSnapchatGhost, FaEnvelope } from 'react-icons/fa';
+import { SiCodechef, SiLeetcode } from 'react-icons/si';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -25,14 +26,26 @@ const Footer: React.FC = () => {
                 Building scalable software, intelligent systems, and practical AI-powered products.
               </p>
               <div className="footer-socials">
-                <a href="https://github.com/satyamkumarkapri" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <a href="https://github.com/satyamkumarkapri" target="_blank" rel="noreferrer" aria-label="GitHub" className="social-github">
                   <FaGithub size={18} />
                 </a>
-                <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-linkedin">
                   <FaLinkedin size={18} />
                 </a>
-                <a href="https://instagram.com/btw_its._satyam" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <a href="https://instagram.com/btw_its._satyam" target="_blank" rel="noreferrer" aria-label="Instagram" className="social-instagram">
                   <FaInstagram size={18} />
+                </a>
+                <a href="https://snapchat.com/add/satyamkapri17" target="_blank" rel="noreferrer" aria-label="Snapchat" className="social-snapchat">
+                  <FaSnapchatGhost size={18} />
+                </a>
+                <a href="https://codechef.com/users/kl_2500031975" target="_blank" rel="noreferrer" aria-label="CodeChef" className="social-codechef">
+                  <SiCodechef size={18} />
+                </a>
+                <a href="https://leetcode.com/u/satyamkapri17" target="_blank" rel="noreferrer" aria-label="LeetCode" className="social-leetcode">
+                  <SiLeetcode size={18} />
+                </a>
+                <a href="mailto:satyamkumarkapri17@gmail.com" aria-label="Email" className="social-email">
+                  <FaEnvelope size={18} />
                 </a>
               </div>
             </div>

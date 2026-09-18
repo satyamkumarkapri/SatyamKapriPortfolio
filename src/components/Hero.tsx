@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Download, GraduationCap, Award, Star, Code2 } from 'lucide-react';
+import { ArrowRight, Download, GraduationCap, Award } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiCodechef, SiLeetcode } from 'react-icons/si';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -47,6 +48,12 @@ const Hero: React.FC = () => {
               <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank" rel="noreferrer" className="hero-social-btn" aria-label="LinkedIn">
                 <FaLinkedin size={20} />
               </a>
+              <a href="https://codechef.com/users/kl_2500031975" target="_blank" rel="noreferrer" className="hero-social-btn" aria-label="CodeChef">
+                <SiCodechef size={20} />
+              </a>
+              <a href="https://leetcode.com/u/satyamkapri17" target="_blank" rel="noreferrer" className="hero-social-btn" aria-label="LeetCode">
+                <SiLeetcode size={20} />
+              </a>
             </div>
           </div>
 
@@ -72,21 +79,21 @@ const Hero: React.FC = () => {
               </div>
             </div>
             <div className="ach-divider"></div>
-            <div className="ach-item">
-              <Star size={18} className="ach-icon" />
+            <a href="https://codechef.com/users/kl_2500031975" target="_blank" rel="noreferrer" className="ach-item ach-link">
+              <SiCodechef size={18} className="ach-icon" />
               <div className="ach-text">
                 <span className="ach-title">4★ CodeChef</span>
                 <span className="ach-sub">Div 2 · 2128 Max</span>
               </div>
-            </div>
+            </a>
             <div className="ach-divider"></div>
-            <div className="ach-item">
-              <Code2 size={18} className="ach-icon" />
+            <a href="https://leetcode.com/u/satyamkapri17" target="_blank" rel="noreferrer" className="ach-item ach-link">
+              <SiLeetcode size={18} className="ach-icon" />
               <div className="ach-text">
-                <span className="ach-title">DSA</span>
-                <span className="ach-sub">Problem Solving</span>
+                <span className="ach-title">LeetCode</span>
+                <span className="ach-sub">Top 50L · 1510 Rating</span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
