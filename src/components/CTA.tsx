@@ -1,8 +1,44 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
 import './CTA.css';
 
 const CTA: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.currentTarget);
+
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        setIsSuccess(true);
+        e.currentTarget.reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="cta section-padding">
       <div className="container">
@@ -49,7 +85,7 @@ const CTA: React.FC = () => {
           </div>
           
           <div className="cta-form-container">
-            <form action="https://api.web3forms.com/submit" method="POST" className="contact-form">
+            <form onSubmit={handleSubmit} className="contact-form">
               <input type="hidden" name="access_key" value="57a275d4-fd7c-4b19-a6ea-e60cfc68f073" />
               
               <div className="form-group">
@@ -67,8 +103,14 @@ const CTA: React.FC = () => {
                 <textarea name="message" placeholder="How can I help you?" required className="form-textarea" rows={4}></textarea>
               </div>
               
-              <button type="submit" className="btn btn-primary w-full">
-                Send Message <Send size={18} />
+              <button type="submit" className="btn btn-primary w-full" disabled={isSubmitting || isSuccess}>
+                {isSubmitting ? (
+                  <>Sending... <Loader2 size={18} className="animate-spin" /></>
+                ) : isSuccess ? (
+                  <>Message Sent! <CheckCircle size={18} /></>
+                ) : (
+                  <>Send Message <Send size={18} /></>
+                )}
               </button>
             </form>
           </div>
