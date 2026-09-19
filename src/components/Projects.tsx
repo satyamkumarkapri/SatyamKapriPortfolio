@@ -65,9 +65,9 @@ const projects = [
     category: 'Backend Development',
     description: 'A robust product catalog management system built with Java.',
     tags: ['Java', 'Backend'],
-    image: '/assets/project3.png',
+    image: '/assets/product_catalog.png',
     githubUrl: 'https://github.com/satyamkumarkapri/Product_Catalog',
-    demoUrl: '',
+    demoUrl: 'https://productcatalogx.vercel.app',
     featured: false
   },
   {
@@ -76,9 +76,9 @@ const projects = [
     category: 'Machine Learning',
     description: 'A machine learning model to predict student placement outcomes based on academic and extracurricular data.',
     tags: ['Python', 'HTML', 'Machine Learning'],
-    image: '/assets/project1.png',
+    image: '/assets/placement_prediction.png',
     githubUrl: 'https://github.com/satyamkumarkapri/Placements_Prediction',
-    demoUrl: '',
+    demoUrl: 'https://placements-prediction-8wt4.onrender.com',
     featured: false
   },
   
@@ -167,7 +167,7 @@ const Projects: React.FC = () => {
           }}
         >
           <div className="featured-image">
-            {featuredProject.image === '/assets/hospital_nav.png' || featuredProject.image === '/assets/covid19.png' || featuredProject.image === '/assets/skilltrack.png' || featuredProject.image === '/assets/kishan_traders.png' ? (
+            {featuredProject.image === '/assets/hospital_nav.png' || featuredProject.image === '/assets/covid19.png' || featuredProject.image === '/assets/skilltrack.png' || featuredProject.image === '/assets/kishan_traders.png' || featuredProject.image === '/assets/placement_prediction.png' || featuredProject.image === '/assets/product_catalog.png' ? (
               <img src={featuredProject.image} alt={featuredProject.title} loading="lazy" />
             ) : (
               <div className="image-coming-soon">
@@ -214,7 +214,7 @@ const Projects: React.FC = () => {
               }}
             >
               <div className="project-image-wrapper">
-                {project.image === '/assets/hospital_nav.png' || project.image === '/assets/covid19.png' || project.image === '/assets/skilltrack.png' || project.image === '/assets/kishan_traders.png' ? (
+                {project.image === '/assets/hospital_nav.png' || project.image === '/assets/covid19.png' || project.image === '/assets/skilltrack.png' || project.image === '/assets/kishan_traders.png' || project.image === '/assets/placement_prediction.png' || project.image === '/assets/product_catalog.png' ? (
                   <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
                 ) : (
                   <div className="image-coming-soon">
