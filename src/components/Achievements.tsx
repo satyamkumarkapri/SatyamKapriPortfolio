@@ -62,6 +62,16 @@ const Achievements: React.FC = () => {
 
   const certItems: ShowcaseItem[] = [
     {
+      id: 107,
+      icon: Award,
+      title: 'Scrum Fundamentals Certified',
+      desc: 'Credential ID: 1192339 (SCRUMstudy).',
+      badgeBg: 'rgba(59, 130, 246, 0.15)',
+      iconColor: '#3B82F6',
+      linkUrl: 'https://www.scrumstudy.com/certification/verify?type=SFC&number=1192339',
+      linkLabel: 'View Credential'
+    },
+    {
       id: 106,
       icon: SiHackerrank,
       title: 'HackerRank Certification',
