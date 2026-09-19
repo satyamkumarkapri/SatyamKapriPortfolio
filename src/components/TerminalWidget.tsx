@@ -18,24 +18,52 @@ const TerminalWidget: React.FC = () => {
     if (!cmd) return;
 
     let output = '';
-    switch (cmd) {
+    const parts = cmd.split(' ');
+    const baseCmd = parts[0];
+    const args = parts.slice(1);
+
+    switch (baseCmd) {
       case 'help':
-        output = 'Available commands: about, skills, education, projects, contact, clear, exit';
+        output = 'Available commands: about, skills, education, projects, contact, clear, exit, ls, pwd, whoami, date, echo, sudo, cat';
         break;
       case 'about':
-        output = 'Satyam Kumar Kapri — Full-Stack Developer | AI & ML Enthusiast pursuing B.Tech CSE at KL University (CGPA 9.12).';
+        output = 'Satyam Kumar Kapri — Full-Stack Developer | AI & ML Enthusiast pursuing B.Tech CSE at KL University (CGPA 9.12).\nSpecializes in MERN stack, Python, and scalable architecture.';
         break;
       case 'skills':
-        output = 'Languages: Java, Python, JavaScript, TypeScript, C, SQL | Stack: React, Node.js, FastAPI, MongoDB | CP: 4★ CodeChef (2128)';
+        output = 'Languages: Java, Python, JavaScript, TypeScript, C, SQL\nStack: React, Node.js, Express, FastAPI, MongoDB, PostgreSQL\nCP: 4★ CodeChef (2128), DSA Rating (1901)';
         break;
       case 'education':
         output = '1. B.Tech CSE (2025-2029) - KL University (9.12 CGPA)\n2. 12th PCMB (2023-2025) - L.N. College\n3. 10th ICSE (2012-2023) - St. Joseph\'s School';
         break;
       case 'projects':
-        output = '• HealthNet (Hospital Management Platform)\n• PhonePe Payment System (System Design & OOP)\n• Intelligent Healthcare Backend';
+        output = '• HealthNet (React, Node, MongoDB) - Hospital Management Platform\n• PhonePe Payment System - Core Java System Design Simulation\n• Intelligent Healthcare Backend - Algorithms & Data Structures for retrieval';
         break;
       case 'contact':
-        output = 'Email: satyamkumarkapri17@gmail.com | Phone: +91 7061****17 | GitHub: github.com/satyamkumarkapri';
+        output = 'Email: satyamkumarkapri17@gmail.com\nPhone: +91 7061****17\nGitHub: github.com/satyamkumarkapri\nLinkedIn: linkedin.com/in/satyamkumarkapri';
+        break;
+      case 'ls':
+        output = 'about.txt  skills.json  projects/  resume.pdf  contact.sh';
+        break;
+      case 'pwd':
+        output = '/home/visitor/satyam_portfolio';
+        break;
+      case 'whoami':
+        output = 'guest_user (You are an awesome visitor exploring my portfolio!)';
+        break;
+      case 'date':
+        output = new Date().toString();
+        break;
+      case 'echo':
+        output = args.join(' ') || 'echo: missing operand';
+        break;
+      case 'sudo':
+        output = 'satyam is not in the sudoers file. This incident will be reported.';
+        break;
+      case 'cat':
+        if (args[0] === 'about.txt') output = 'Satyam Kumar Kapri is a developer passionate about building robust systems.';
+        else if (args[0] === 'skills.json') output = '{ "frontend": ["React", "TypeScript"], "backend": ["Node.js", "Java", "Python"] }';
+        else if (args[0] === 'resume.pdf') output = 'Error: Cannot display binary file. Use the UI to download.';
+        else output = `cat: ${args[0] || ''}: No such file or directory`;
         break;
       case 'clear':
         setTerminalHistory([]);
@@ -46,7 +74,7 @@ const TerminalWidget: React.FC = () => {
         setTerminalInput('');
         return;
       default:
-        output = `Command not found: "${cmd}". Type "help" for a list of commands.`;
+        output = `Command not found: "${baseCmd}". Type "help" for a list of available commands.`;
     }
 
     setTerminalHistory(prev => [...prev, { command: terminalInput, output }]);

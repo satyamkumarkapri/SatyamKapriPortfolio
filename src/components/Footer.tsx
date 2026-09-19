@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaInstagram, FaGithub, FaLinkedin, FaArrowUp, FaSnapchatGhost, FaEnvelope } from 'react-icons/fa';
-import { SiCodechef, SiLeetcode } from 'react-icons/si';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -37,12 +36,6 @@ const Footer: React.FC = () => {
                 </a>
                 <a href="https://snapchat.com/add/satyamkapri17" target="_blank" rel="noreferrer" aria-label="Snapchat" className="social-snapchat">
                   <FaSnapchatGhost size={18} />
-                </a>
-                <a href="https://codechef.com/users/kl_2500031975" target="_blank" rel="noreferrer" aria-label="CodeChef" className="social-codechef">
-                  <SiCodechef size={18} />
-                </a>
-                <a href="https://leetcode.com/u/satyamkapri17" target="_blank" rel="noreferrer" aria-label="LeetCode" className="social-leetcode">
-                  <SiLeetcode size={18} />
                 </a>
                 <a href="mailto:satyamkumarkapri17@gmail.com" aria-label="Email" className="social-email">
                   <FaEnvelope size={18} />

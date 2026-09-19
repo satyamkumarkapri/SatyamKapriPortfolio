@@ -52,9 +52,9 @@ const Chatbot: React.FC = () => {
     const q = rawQuery.toLowerCase().trim();
 
     // Greetings & Who are you
-    if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q.includes('who are you') || q.includes('about') || q.includes('banka') || q.includes('bihar')) {
+    if (q.match(/\b(hi|hello|hey|greetings|sup|hola)\b/) || q.includes('who are you') || q.includes('about') || q.includes('banka') || q.includes('bihar')) {
       return {
-        text: "Satyam Kumar Kapri is originally from Banka, Bihar, and is pursuing a Bachelor of Technology in Computer Science & Engineering at KL University (9.12 CGPA).\n\nDriven by curiosity in intelligent systems, full-stack web platforms, and algorithmic problem-solving (4★ CodeChef), he bridges deep engineering with a strong passion for business, entrepreneurship, and long-term MBA aspirations.",
+        text: "Satyam Kumar Kapri is originally from Banka, Bihar, and is pursuing a B.Tech in CSE at KL University (9.12 CGPA).\n\nDriven by curiosity in intelligent systems, full-stack web platforms, and algorithmic problem-solving (4★ CodeChef), he bridges deep engineering with a strong passion for business, entrepreneurship, and long-term MBA aspirations.",
         links: [
           { label: 'Read Full About Section', url: '#about' }
         ]
@@ -62,7 +62,7 @@ const Chatbot: React.FC = () => {
     }
 
     // Projects
-    if (q.includes('project') || q.includes('healthnet') || q.includes('phonepe') || q.includes('built') || q.includes('work')) {
+    if (q.includes('project') || q.includes('healthnet') || q.includes('phonepe') || q.includes('built') || q.includes('work') || q.includes('portfolio') || q.includes('made')) {
       return {
         text: "Here are Satyam's flagship engineering projects:\n\n• 🏥 HealthNet: A comprehensive hospital management system built with React, Node.js, Express, and MongoDB, engineered for high availability and secure patient data.\n• 💳 PhonePe Payment Simulator: A digital payments backend simulation implemented in Core Java leveraging OOP design patterns and scalable system architecture.\n• 🧠 Intelligent Healthcare System: Backend architecture applying advanced Data Structures & Algorithms for optimal patient record retrieval.",
         links: [
@@ -73,7 +73,7 @@ const Chatbot: React.FC = () => {
     }
 
     // Skills / Tech Stack
-    if (q.includes('skill') || q.includes('tech') || q.includes('stack') || q.includes('language') || q.includes('framework') || q.includes('python') || q.includes('java') || q.includes('react')) {
+    if (q.includes('skill') || q.includes('tech') || q.includes('stack') || q.includes('language') || q.includes('framework') || q.includes('python') || q.includes('java') || q.includes('react') || q.includes('node') || q.includes('database')) {
       return {
         text: "Satyam's Technical Arsenal spans full-stack engineering & intelligent systems:\n\n• Core Languages: Java, Python, JavaScript, TypeScript, C, SQL, HTML5/CSS3\n• Frontend: React.js, Vite, Tailwind CSS, Modern Responsive UI\n• Backend & APIs: Node.js, Express.js, Spring Boot, FastAPI, RESTful Architectures\n• AI/ML & Data: PostgreSQL, MongoDB, Scikit-learn, Pandas, NumPy, Hugging Face\n• Developer Tools: Git, GitHub, Docker, Postman, Render, VS Code",
         links: [
@@ -92,18 +92,18 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // Competitive Programming / Achievements
-    if (q.includes('codechef') || q.includes('dsa') || q.includes('competitive') || q.includes('rating') || q.includes('hackathon') || q.includes('achievement') || q.includes('rpa') || q.includes('adobe')) {
+    // Competitive Programming / Achievements / Certifications
+    if (q.includes('codechef') || q.includes('dsa') || q.includes('competitive') || q.includes('rating') || q.includes('hackathon') || q.includes('achievement') || q.includes('certif') || q.includes('scrum') || q.includes('award')) {
       return {
-        text: "Satyam is an active competitive programmer with proven problem-solving credentials:\n\n⭐ 4★ CodeChef Programmer (Div 2) — Max Rating: 2128 (Ranked #3556 globally, #3112 in India)\n🧩 DSA Rating 1901 — Max Rating: 1904 (Ranked #445 globally, #422 in India)\n🏅 Problem Solver Gold Badge — 640+ problems solved across CP platforms\n⚡ Adobe University Hackathon — Cleared Round 1 Online Assessment (MCQ + Coding) in Aug 2026\n🤖 RPA Club Member — Active contributor to automation & AI-driven productivity tools at KL University",
+        text: "Satyam is an active competitive programmer with proven credentials:\n\n⭐ 4★ CodeChef Programmer (Div 2) — Max Rating: 2128\n🧩 DSA Rating 1901 — Max Rating: 1904\n🏅 Problem Solver Gold Badge — 640+ problems solved across CP platforms\n\n📜 Top Certifications:\n• Scrum Fundamentals Certified (SFC)\n• HackerRank Problem Solving (Intermediate)\n• freeCodeCamp Frontend Development\n• Simplilearn Python & Data Science",
         links: [
           { label: 'View Recognition Card', url: '#achievements' }
         ]
       };
     }
 
-    // Contact & Hire
-    if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('phone') || q.includes('reach') || q.includes('job') || q.includes('internship') || q.includes('call')) {
+    // Contact & Hire & Experience
+    if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('phone') || q.includes('reach') || q.includes('job') || q.includes('internship') || q.includes('call') || q.includes('experience')) {
       return {
         text: "Satyam is actively open to Software Engineering roles, AI/ML opportunities, internships, and collaborative projects!\n\n📬 Direct Contact:\n• Email: satyamkumarkapri17@gmail.com\n• Phone: +91 7061****17\n• Location: Bihar, India\n• LinkedIn: linkedin.com/in/satyamkumarkapri\n• GitHub: github.com/satyamkumarkapri",
         links: [
@@ -123,8 +123,8 @@ const Chatbot: React.FC = () => {
       };
     }
 
-    // Future Vision & MBA
-    if (q.includes('future') || q.includes('goal') || q.includes('vision') || q.includes('mba') || q.includes('business')) {
+    // Future Vision & MBA & Goals
+    if (q.includes('future') || q.includes('goal') || q.includes('vision') || q.includes('mba') || q.includes('business') || q.includes('aim') || q.includes('dream')) {
       return {
         text: "Satyam's long-term vision:\n\n'Combine engineering with business strategy, contribute to the growth of my family's businesses, pursue an MBA, and build technology-driven ventures that create meaningful impact.'\n\nHe believes the most impactful ideas emerge when cutting-edge technical innovation meets a deep understanding of business execution.",
         links: [
@@ -133,9 +133,35 @@ const Chatbot: React.FC = () => {
       };
     }
 
+    // Hobbies / Interests
+    if (q.includes('hobby') || q.includes('hobbies') || q.includes('interest') || q.includes('free time') || q.includes('fun')) {
+      return {
+        text: "Beyond coding, Satyam enjoys exploring business strategies, learning about entrepreneurship, reading tech blogs, and staying updated with the latest in AI/ML advancements. He's also active in the RPA Club at KL University!"
+      };
+    }
+
+    // AI meta questions & Easter eggs
+    if (q.includes('joke') || q.includes('funny')) {
+      return {
+        text: "Why do programmers prefer dark mode?\n\nBecause light attracts bugs! 🐛"
+      };
+    }
+
+    if (q.includes('who made you') || q.includes('who created you') || q.includes('are you ai') || q.includes('are you human')) {
+      return {
+        text: "I am a simulated AI assistant developed by Satyam Kumar Kapri to help you navigate his portfolio and learn more about his skills and achievements. I'm completely trained on his data!"
+      };
+    }
+
+    if (q.includes('meaning of life')) {
+      return {
+        text: "The meaning of life is 42. But for Satyam, it's writing scalable code, achieving 5★ on CodeChef, and building impactful businesses! 🚀"
+      };
+    }
+
     // Default Fallback
     return {
-      text: "I can help answer questions about Satyam's software projects, technical skills, academic history (KL University), CodeChef competitive ranking (4★ 2128), or provide his contact info and resume!\n\nTry clicking one of the suggested topics below or ask a specific question."
+      text: "I can help answer questions about Satyam's software projects, technical skills, academic history (KL University), CodeChef competitive ranking (4★ 2128), or provide his contact info and resume!\n\nTry clicking one of the suggested topics below or ask a specific question like 'What is his tech stack?' or 'Tell me a programming joke'."
     };
   };
 
