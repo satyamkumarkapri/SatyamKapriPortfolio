@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trophy, Award, Star, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap } from 'lucide-react';
-import { SiHackerrank } from 'react-icons/si';
+import { SiHackerrank, SiLeetcode, SiCodechef } from 'react-icons/si';
 import './Achievements.css';
 
 interface ShowcaseItem {
@@ -18,19 +18,23 @@ const Achievements: React.FC = () => {
   const compItems: ShowcaseItem[] = [
     {
       id: 1,
-      icon: Star,
+      icon: SiCodechef,
       title: '4★ CodeChef Programmer',
-      desc: 'Division 2. Highest rating 2128 — ranked #3556 globally and #3112 in India.',
+      desc: 'Current Rating: 1820 (Div 2). Highest rating 2128 — ranked #3556 globally and #3112 in India.',
       badgeBg: 'rgba(245, 158, 11, 0.15)',
-      iconColor: '#F59E0B'
+      iconColor: '#F59E0B',
+      linkUrl: 'https://www.codechef.com/users/kl_2500031975',
+      linkLabel: 'View Profile'
     },
     {
       id: 2,
-      icon: Code2,
+      icon: SiCodechef,
       title: 'DSA Rating 1901',
       desc: 'Highest rating 1904 — ranked #445 globally and #422 in India for algorithmic problem solving.',
       badgeBg: 'rgba(139, 92, 246, 0.15)',
-      iconColor: '#8B5CF6'
+      iconColor: '#8B5CF6',
+      linkUrl: 'https://www.codechef.com/users/kl_2500031975',
+      linkLabel: 'View Profile'
     },
     {
       id: 3,
@@ -57,6 +61,16 @@ const Achievements: React.FC = () => {
       desc: 'Active member of the Robotic Process Automation (RPA) Club at KL University — exploring automation & AI workflows.',
       badgeBg: 'rgba(59, 130, 246, 0.15)',
       iconColor: '#3B82F6'
+    },
+    {
+      id: 6,
+      icon: SiLeetcode,
+      title: 'LeetCode Problem Solver',
+      desc: 'Contest Rating 1,510 — actively solving algorithmic problems using Java. Participant in LeetCoding challenges.',
+      badgeBg: 'rgba(245, 158, 11, 0.15)',
+      iconColor: '#F59E0B',
+      linkUrl: 'https://leetcode.com/u/satyamkapri17/',
+      linkLabel: 'View Profile'
     }
   ];
 
