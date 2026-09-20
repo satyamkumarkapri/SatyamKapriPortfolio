@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Award, Star, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap } from 'lucide-react';
+import { Trophy, Award, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap } from 'lucide-react';
 import { SiHackerrank, SiLeetcode, SiCodechef } from 'react-icons/si';
 import './Achievements.css';
 
