@@ -62,6 +62,16 @@ const Achievements: React.FC = () => {
 
   const certItems: ShowcaseItem[] = [
     {
+      id: 108,
+      icon: Code2,
+      title: 'Navachar - Code Fest 2026',
+      desc: 'Certificate of Participation in Navachar - Code Fest 2026 by MIT & Unstop. Credential ID: 39a5f551-c293-4b92-aebf-44167998da36',
+      badgeBg: 'rgba(139, 92, 246, 0.15)',
+      iconColor: '#8B5CF6',
+      linkUrl: 'https://unstop.com/certificate-preview/39a5f551-c293-4b92-aebf-44167998da36?utm_campaign',
+      linkLabel: 'View Credential'
+    },
+    {
       id: 107,
       icon: Award,
       title: 'Scrum Fundamentals Certified',
