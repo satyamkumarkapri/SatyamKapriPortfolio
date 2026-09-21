@@ -76,6 +76,16 @@ const Achievements: React.FC = () => {
 
   const certItems: ShowcaseItem[] = [
     {
+      id: 109,
+      icon: Code2,
+      title: 'HackQuest: Code for Communities 2.0',
+      desc: "Certificate of Participation in HackQuest: Code for Communities 2.0 of Pantheon'26 by Unstop. Credential ID: 56514b3f-678a-4714-9f12-0197d74f94a4",
+      badgeBg: 'rgba(236, 72, 153, 0.15)',
+      iconColor: '#EC4899',
+      linkUrl: 'https://unstop.com/certificate-preview/56514b3f-678a-4714-9f12-0197d74f94a4?utm_campaign',
+      linkLabel: 'View Credential'
+    },
+    {
       id: 108,
       icon: Code2,
       title: 'Navachar - Code Fest 2026',
