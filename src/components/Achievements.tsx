@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Trophy, Award, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap } from 'lucide-react';
 import { SiHackerrank, SiLeetcode, SiCodechef } from 'react-icons/si';
 import './Achievements.css';
@@ -15,6 +15,8 @@ interface ShowcaseItem {
 }
 
 const Achievements: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'programming' | 'certifications'>('programming');
+
   const compItems: ShowcaseItem[] = [
     {
       id: 1,
@@ -128,10 +130,22 @@ const Achievements: React.FC = () => {
     {
       id: 102,
       icon: Code,
-      title: 'CodeChef Certification',
-      desc: 'Certified in Java Programming & Algorithmic Problem Solving using Java.',
+      title: 'Algorithmic Problem Solving',
+      desc: 'Certified by CodeChef in Algorithmic Problem Solving using Java. Credential ID: 712d249 (Username: kl2500031975).',
       badgeBg: 'rgba(245, 158, 11, 0.15)',
-      iconColor: '#F59E0B'
+      iconColor: '#F59E0B',
+      linkUrl: 'https://www.codechef.com/certificates/verify',
+      linkLabel: 'Verify Certificate'
+    },
+    {
+      id: 110,
+      icon: Code,
+      title: 'Learn Java Certification',
+      desc: 'Certified by CodeChef in Learn Java. Credential ID: 6a72528 (Username: kl2500031975).',
+      badgeBg: 'rgba(245, 158, 11, 0.15)',
+      iconColor: '#F59E0B',
+      linkUrl: 'https://www.codechef.com/certificates/verify',
+      linkLabel: 'Verify Certificate'
     },
     {
       id: 103,
@@ -144,8 +158,24 @@ const Achievements: React.FC = () => {
     {
       id: 104,
       icon: BookOpen,
-      title: 'Simplilearn',
-      desc: 'Python Django 101, Introduction to ASP.NET & Mathematics for Data Science.',
+      title: 'Introduction to ASP.Net',
+      desc: 'Certificate of Completion by Simplilearn SkillUp. Credential ID: 10206891.',
+      badgeBg: 'rgba(6, 182, 212, 0.15)',
+      iconColor: '#06B6D4'
+    },
+    {
+      id: 111,
+      icon: BookOpen,
+      title: 'Mathematics for Data Science',
+      desc: 'Certificate of Completion by Simplilearn SkillUp. Credential ID: 10268307.',
+      badgeBg: 'rgba(6, 182, 212, 0.15)',
+      iconColor: '#06B6D4'
+    },
+    {
+      id: 112,
+      icon: BookOpen,
+      title: 'Python Django 101',
+      desc: 'Certificate of Completion by Simplilearn.',
       badgeBg: 'rgba(6, 182, 212, 0.15)',
       iconColor: '#06B6D4'
     },
@@ -170,95 +200,67 @@ const Achievements: React.FC = () => {
           </div>
         </div>
 
-        <div className="achievements-symmetrical-grid">
-          {/* Left Column Card: Competitive Programming */}
-          <div className="showcase-card card-base">
-            <div className="showcase-card-header">
-              <div className="showcase-header-icon-wrap comp-icon-theme">
-                <Trophy size={24} />
-              </div>
-              <h3 className="showcase-card-title">Competitive Programming</h3>
-            </div>
-            
-            <div className="showcase-divider"></div>
-
-            <div className="showcase-list">
-              {compItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.id} className="showcase-item">
-                    <div 
-                      className="showcase-icon-badge" 
-                      style={{ backgroundColor: item.badgeBg, color: item.iconColor }}
-                    >
-                      <Icon size={22} />
-                    </div>
-                    <div className="showcase-content">
-                      <div className="showcase-title-row">
-                        <h4 className="showcase-item-title">{item.title}</h4>
-                        {item.linkUrl && (
-                          <a 
-                            href={item.linkUrl} 
-                            target="_blank" 
-                            rel="noreferrer" 
-                            className="showcase-pill-link"
-                            title="View Official Certificate"
-                          >
-                            <ExternalLink size={12} /> {item.linkLabel || 'View'}
-                          </a>
-                        )}
-                      </div>
-                      <p className="showcase-item-desc">{item.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+        <div className="achievements-tabs-wrapper">
+          <div className="achievements-tabs">
+            <button 
+              className={`achievements-tab ${activeTab === 'programming' ? 'active' : ''}`}
+              onClick={() => setActiveTab('programming')}
+            >
+              <Trophy size={18} /> Competitive Programming
+            </button>
+            <button 
+              className={`achievements-tab ${activeTab === 'certifications' ? 'active' : ''}`}
+              onClick={() => setActiveTab('certifications')}
+            >
+              <Award size={18} /> Certifications & Credentials
+            </button>
           </div>
+        </div>
 
-          {/* Right Column Card: Certifications */}
-          <div className="showcase-card card-base">
-            <div className="showcase-card-header">
-              <div className="showcase-header-icon-wrap cert-icon-theme">
-                <Award size={24} />
-              </div>
-              <h3 className="showcase-card-title">Certifications & Credentials</h3>
-            </div>
-            
-            <div className="showcase-divider"></div>
+        <div className="achievements-tab-content">
+          {/* Ambient Glow Effects */}
+          <div className="achievements-glow glow-1"></div>
+          <div className="achievements-glow glow-2"></div>
 
-            <div className="showcase-list">
-              {certItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.id} className="showcase-item">
+          <div className="achievements-grid">
+            {(activeTab === 'programming' ? compItems : certItems).map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div 
+                  key={item.id} 
+                  className="achievement-card" 
+                  style={{ 
+                    animationDelay: `${index * 0.05}s`,
+                    '--card-accent': item.iconColor
+                  } as React.CSSProperties}
+                >
+                  <div className="achievement-card-header">
                     <div 
-                      className="showcase-icon-badge" 
+                      className="achievement-icon-wrapper" 
                       style={{ backgroundColor: item.badgeBg, color: item.iconColor }}
                     >
-                      <Icon size={22} />
+                      <Icon size={24} />
                     </div>
-                    <div className="showcase-content">
-                      <div className="showcase-title-row">
-                        <h4 className="showcase-item-title">{item.title}</h4>
-                        {item.linkUrl && (
-                          <a 
-                            href={item.linkUrl} 
-                            target="_blank" 
-                            rel="noreferrer" 
-                            className="showcase-pill-link cert-pill-accent"
-                            title="View Official Certificate"
-                          >
-                            <ExternalLink size={12} /> {item.linkLabel || 'View'}
-                          </a>
-                        )}
-                      </div>
-                      <p className="showcase-item-desc">{item.desc}</p>
-                    </div>
+                    {item.linkUrl && (
+                      <a 
+                        href={item.linkUrl} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="achievement-link-btn"
+                        style={{ color: item.iconColor, borderColor: `${item.iconColor}40`, backgroundColor: `${item.iconColor}15` }}
+                        title={item.linkLabel || "View Credential"}
+                      >
+                        <ExternalLink size={14} /> {item.linkLabel || 'View'}
+                      </a>
+                    )}
                   </div>
-                );
-              })}
-            </div>
+                  <div className="achievement-card-body">
+                    <h4 className="achievement-title">{item.title}</h4>
+                    <p className="achievement-desc">{item.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 

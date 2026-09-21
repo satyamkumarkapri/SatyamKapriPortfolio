@@ -131,7 +131,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  transition: background-color var(--transition-slow), color var(--transition-slow);
+  transition: background-color 0s, color 0s;
 }
 
 /* Dynamic Liquid Blob Background */
@@ -145,7 +145,7 @@ body {
   overflow: hidden;
   pointer-events: none;
   background: var(--color-bg);
-  transition: background-color var(--transition-slow);
+  transition: background-color 0s;
   will-change: transform;
 }
 

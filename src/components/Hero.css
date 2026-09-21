@@ -243,6 +243,7 @@ a.ach-item:hover .ach-title {
   justify-content: center;
   align-items: center;
   min-height: 500px;
+  z-index: 1;
 }
 
 .hero-glow {
@@ -302,7 +303,6 @@ a.ach-item:hover .ach-title {
   z-index: 1;
   max-width: 80%;
   height: auto;
-  border-radius: var(--radius-2xl);
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
 }
 

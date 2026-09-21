@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Download, GraduationCap, Award } from 'lucide-react';
+import { ArrowRight, GraduationCap, Award, Eye } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiCodechef, SiLeetcode } from 'react-icons/si';
+import ResumeViewer from './ResumeViewer';
 import './Hero.css';
 
 const Hero: React.FC = () => {
   const fullSubtitle = "Computer Science & Engineering student building scalable software, intelligent systems, and practical AI-powered products.";
   const [displayedSubtitle, setDisplayedSubtitle] = useState('');
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
     let i = 0;
@@ -38,9 +40,9 @@ const Hero: React.FC = () => {
             <a href="#projects" className="btn btn-primary">
               View My Work <ArrowRight size={16} />
             </a>
-            <a href="/resume.html" download="Satyam_Kumar_Kapri_Resume.html" className="btn btn-outline pulse-btn">
-              Download CV <Download size={16} />
-            </a>
+            <button onClick={() => setIsResumeOpen(true)} className="btn btn-outline pulse-btn">
+              View Resume <Eye size={16} />
+            </button>
             <div className="hero-socials">
               <a href="https://github.com/satyamkumarkapri" target="_blank" rel="noreferrer" className="hero-social-btn" aria-label="GitHub">
                 <FaGithub size={20} />
@@ -107,6 +109,7 @@ const Hero: React.FC = () => {
           <img src="/assets/hero.png" alt="Satyam Kumar Kapri" className="hero-image animate-float" />
         </div>
       </div>
+      <ResumeViewer isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </section>
   );
 };
