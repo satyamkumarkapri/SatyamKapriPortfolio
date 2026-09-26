@@ -37,8 +37,8 @@ const ResumeViewer: React.FC<ResumeViewerProps> = ({ isOpen, onClose }) => {
               <ExternalLink size={18} />
             </a>
             <a 
-              href="/resume.html" 
-              download="Satyam_Kumar_Kapri_Resume.html" 
+              href="/resume.pdf" 
+              download="Satyam_Kumar_Kapri_Resume.pdf" 
               className="resume-action-btn primary" 
               title="Download Resume"
             >

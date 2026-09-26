@@ -78,6 +78,14 @@ const Achievements: React.FC = () => {
 
   const certItems: ShowcaseItem[] = [
     {
+      id: 113,
+      icon: Zap,
+      title: 'TATA - GenAI Powered Data Analytics',
+      desc: 'Certificate of Completion for Job Simulation by TATA via Forage (Sept 2026). Verification Code: 6ab65ed0f13560b2adefa4d4',
+      badgeBg: 'rgba(59, 130, 246, 0.15)',
+      iconColor: '#3B82F6'
+    },
+    {
       id: 109,
       icon: Code2,
       title: 'HackQuest: Code for Communities 2.0',
