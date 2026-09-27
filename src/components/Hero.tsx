@@ -28,8 +28,8 @@ const Hero: React.FC = () => {
           <div className="badge hero-badge">👋 HELLO, I'M</div>
           <h1 className="hero-title">
             <span className="hero-name">Satyam Kumar Kapri</span> <br />
-            <span className="hero-role">Full-Stack Developer | AI & ML Enthusiast</span> <br />
-            <span className="text-gradient hero-highlight">AI, ML & Software Development</span>
+            <span className="hero-role">Aspiring Software Engineer | AI & ML Enthusiast</span> <br />
+            <span className="text-gradient hero-highlight">Building Intelligent Systems</span>
           </h1>
           <p className="hero-subtitle">
             {displayedSubtitle}
@@ -44,16 +44,16 @@ const Hero: React.FC = () => {
               View Resume <Eye size={16} />
             </button>
             <div className="hero-socials">
-              <a href="https://github.com/satyamkumarkapri" target="_blank" rel="noreferrer" className="hero-social-btn" aria-label="GitHub">
+              <a href="https://github.com/satyamkumarkapri" target="_blank" rel="noreferrer" className="hero-social-btn social-github" aria-label="GitHub">
                 <FaGithub size={20} />
               </a>
-              <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank" rel="noreferrer" className="hero-social-btn" aria-label="LinkedIn">
+              <a href="https://linkedin.com/in/satyamkumarkapri" target="_blank" rel="noreferrer" className="hero-social-btn social-linkedin" aria-label="LinkedIn">
                 <FaLinkedin size={20} />
               </a>
-              <a href="https://codechef.com/users/kl_2500031975" target="_blank" rel="noreferrer" className="hero-social-btn" aria-label="CodeChef">
+              <a href="https://codechef.com/users/kl_2500031975" target="_blank" rel="noreferrer" className="hero-social-btn social-codechef" aria-label="CodeChef">
                 <SiCodechef size={20} />
               </a>
-              <a href="https://leetcode.com/u/satyamkapri17" target="_blank" rel="noreferrer" className="hero-social-btn" aria-label="LeetCode">
+              <a href="https://leetcode.com/u/satyamkapri17" target="_blank" rel="noreferrer" className="hero-social-btn social-leetcode" aria-label="LeetCode">
                 <SiLeetcode size={20} />
               </a>
             </div>

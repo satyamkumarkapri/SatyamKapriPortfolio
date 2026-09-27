@@ -40,7 +40,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139, 92, 246, 0.08), transparent 45%);
+  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--card-bg), transparent 45%);
   z-index: 0;
   pointer-events: none;
   opacity: 0;
@@ -49,7 +49,8 @@
 
 .build-card:hover {
   transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 25px rgba(139, 92, 246, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 25px var(--card-bg);
+  border-color: var(--card-color);
 }
 
 .build-card:hover::before {
@@ -81,6 +82,7 @@
 
 .build-card:hover .build-icon-wrapper {
   transform: scale(1.1) rotate(4deg);
+  box-shadow: 0 8px 24px var(--card-bg);
 }
 
 .build-category-badge {
@@ -181,7 +183,8 @@
 
 .build-card:hover .build-tag {
   color: var(--color-text);
-  border-color: rgba(139, 92, 246, 0.3);
+  border-color: var(--card-color);
+  background: var(--card-bg);
 }
 
 /* Responsive Mobile */

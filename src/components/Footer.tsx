@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
                 <div className="logo-icon">SK</div>
                 <div className="logo-text-footer">
                   <span className="logo-name">Satyam Kumar Kapri</span>
-                  <span className="logo-title">Full-Stack Engineer</span>
+                  <span className="logo-title">Aspiring Software Engineer</span>
                 </div>
               </div>
               <p className="footer-bio">

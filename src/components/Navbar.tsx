@@ -43,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           <div className="logo-icon">SK</div>
           <div className="logo-text">
             <span className="logo-name">SATYAM KUMAR KAPRI</span>
-            <span className="logo-title">Full-Stack Developer</span>
+            <span className="logo-title">Aspiring Software Engineer</span>
           </div>
         </a>
         

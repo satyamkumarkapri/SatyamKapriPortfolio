@@ -101,7 +101,7 @@ const About: React.FC = () => {
               </p>
 
               <p>
-                My long-term goal is to <strong>pursue an MBA</strong>, combine engineering rigor with business strategy, contribute to the growth and scaling of my family's businesses, and eventually build <strong>technology-driven ventures</strong> that create lasting, meaningful impact.
+                My long-term goals are to <strong>pursue an MBA</strong>, combine engineering rigor with business strategy, contribute to the growth and scaling of my family's businesses, and eventually build <strong>technology-driven ventures</strong> that create lasting, meaningful impact.
               </p>
             </div>
           </div>

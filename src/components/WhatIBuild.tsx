@@ -106,6 +106,7 @@ const WhatIBuild: React.FC = () => {
               <div 
                 key={card.id} 
                 className="build-card card-base"
+                style={{ '--card-color': card.themeColor, '--card-bg': card.themeBg } as React.CSSProperties}
                 onMouseMove={handleMouseMove}
               >
                 {/* Top Row: Icon + Category Badge */}
