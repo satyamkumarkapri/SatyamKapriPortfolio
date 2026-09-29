@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Trophy, Award, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap } from 'lucide-react';
+import { Trophy, Award, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap, Shield } from 'lucide-react';
 import { SiHackerrank, SiLeetcode, SiCodechef } from 'react-icons/si';
 import './Achievements.css';
 
@@ -77,6 +77,14 @@ const Achievements: React.FC = () => {
   ];
 
   const certItems: ShowcaseItem[] = [
+    {
+      id: 114,
+      icon: Shield,
+      title: 'Mastercard - Cybersecurity Job Simulation',
+      desc: 'Certificate of Completion for Job Simulation by Mastercard via Forage (Sept 2026). Verification Code: 6ab95cfdf13560b2ad5f84b7',
+      badgeBg: 'rgba(239, 68, 68, 0.15)',
+      iconColor: '#EF4444'
+    },
     {
       id: 113,
       icon: Zap,
