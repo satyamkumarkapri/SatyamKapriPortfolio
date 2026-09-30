@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Trophy, Award, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap, Shield } from 'lucide-react';
-import { SiHackerrank, SiLeetcode, SiCodechef } from 'react-icons/si';
+import { SiHackerrank, SiLeetcode, SiCodechef, SiMongodb } from 'react-icons/si';
 import './Achievements.css';
 
 interface ShowcaseItem {
@@ -77,6 +77,16 @@ const Achievements: React.FC = () => {
   ];
 
   const certItems: ShowcaseItem[] = [
+    {
+      id: 115,
+      icon: SiMongodb,
+      title: 'MongoDB Skill: CRUD Operations',
+      desc: 'Certificate of Completion for CRUD Operations in MongoDB via Credly (Sept 30, 2026).',
+      badgeBg: 'rgba(34, 197, 94, 0.15)',
+      iconColor: '#22C55E',
+      linkUrl: 'https://www.credly.com/badges/0d9afb2c-1952-4e07-860f-8b1544fda552',
+      linkLabel: 'View Credential'
+    },
     {
       id: 114,
       icon: Shield,

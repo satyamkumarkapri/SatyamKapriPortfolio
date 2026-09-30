@@ -95,7 +95,7 @@ const Chatbot: React.FC = () => {
     // Competitive Programming / Achievements / Certifications
     if (q.includes('codechef') || q.includes('dsa') || q.includes('competitive') || q.includes('rating') || q.includes('hackathon') || q.includes('achievement') || q.includes('certif') || q.includes('scrum') || q.includes('award')) {
       return {
-        text: "Satyam is an active competitive programmer with proven credentials:\n\n⭐ 4★ CodeChef Programmer (Div 2) — Max Rating: 2128\n🧩 DSA Rating 1901 — Max Rating: 1904\n🏅 Problem Solver Gold Badge — 640+ problems solved across CP platforms\n\n📜 Top Certifications:\n• Scrum Fundamentals Certified (SFC)\n• HackerRank Problem Solving (Intermediate)\n• freeCodeCamp Frontend Development\n• Simplilearn Python & Data Science",
+        text: "Satyam is an active competitive programmer with proven credentials:\n\n⭐ 4★ CodeChef Programmer (Div 2) — Max Rating: 2128\n🧩 DSA Rating 1901 — Max Rating: 1904\n🏅 Problem Solver Gold Badge — 640+ problems solved across CP platforms\n\n📜 Top Certifications:\n• MongoDB Skill: CRUD Operations\n• Scrum Fundamentals Certified (SFC)\n• HackerRank Problem Solving (Intermediate)\n• freeCodeCamp Frontend Development",
         links: [
           { label: 'View Recognition Card', url: '#achievements' }
         ]
