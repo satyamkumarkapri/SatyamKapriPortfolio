@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
               <SiLeetcode size={18} className="ach-icon" />
               <div className="ach-text">
                 <span className="ach-title">LeetCode</span>
-                <span className="ach-sub">Top 31L · 1540 Rating</span>
+                <span className="ach-sub">Top 20% · 1636 Rating</span>
               </div>
             </a>
           </div>
