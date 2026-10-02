@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Trophy, Award, Code2, Medal, Zap, ExternalLink, FileText, Code, Flame, BookOpen, GraduationCap, Shield } from 'lucide-react';
-import { SiHackerrank, SiLeetcode, SiCodechef, SiMongodb } from 'react-icons/si';
+import { SiHackerrank, SiLeetcode, SiCodechef, SiMongodb, SiGoogle } from 'react-icons/si';
 import './Achievements.css';
 
 interface ShowcaseItem {
@@ -77,6 +77,16 @@ const Achievements: React.FC = () => {
   ];
 
   const certItems: ShowcaseItem[] = [
+    {
+      id: 116,
+      icon: SiGoogle,
+      title: 'Operating Systems and You: Becoming a Power User',
+      desc: 'Certificate of Completion authorized by Google and offered through Coursera (Oct 2, 2026).',
+      badgeBg: 'rgba(66, 133, 244, 0.15)',
+      iconColor: '#4285F4',
+      linkUrl: 'https://coursera.org/verify/EU80DIPHH446',
+      linkLabel: 'Verify Certificate'
+    },
     {
       id: 115,
       icon: SiMongodb,
