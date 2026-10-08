@@ -68,7 +68,7 @@ const Achievements: React.FC = () => {
       id: 6,
       icon: SiLeetcode,
       title: 'LeetCode Problem Solver',
-      desc: 'Contest Rating 1,636 — ranked #174,758 globally. Actively solving algorithmic problems using Java (44 solved).',
+      desc: 'Contest Rating 1,714 — ranked #114,300 globally. Actively solving algorithmic problems using Java (69 solved).',
       badgeBg: 'rgba(245, 158, 11, 0.15)',
       iconColor: '#F59E0B',
       linkUrl: 'https://leetcode.com/u/satyamkapri17/',
