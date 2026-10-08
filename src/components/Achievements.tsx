@@ -78,6 +78,26 @@ const Achievements: React.FC = () => {
 
   const certItems: ShowcaseItem[] = [
     {
+      id: 118,
+      icon: GraduationCap,
+      title: 'Machine Learning Specialization',
+      desc: 'Certificate of Completion by DeepLearning.AI and Stanford University offered through Coursera (Oct 7, 2026).',
+      badgeBg: 'rgba(140, 21, 21, 0.15)',
+      iconColor: '#8C1515',
+      linkUrl: 'https://coursera.org/verify/specialization/5N5MTJCSK7PJ',
+      linkLabel: 'Verify Certificate'
+    },
+    {
+      id: 117,
+      icon: GraduationCap,
+      title: 'Stanford Online: Algorithms Specialization',
+      desc: 'Certificate of Completion authorized by Stanford University and offered through Coursera (Oct 8, 2026).',
+      badgeBg: 'rgba(140, 21, 21, 0.15)',
+      iconColor: '#8C1515',
+      linkUrl: 'https://coursera.org/verify/specialization/2F1Y72XQ1S8D',
+      linkLabel: 'Verify Certificate'
+    },
+    {
       id: 116,
       icon: SiGoogle,
       title: 'Operating Systems and You: Becoming a Power User',
